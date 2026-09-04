@@ -1,0 +1,6 @@
+# Core pipeline dependencies - pinned for reproducibility (principle 12).
+# All free / open-source. Versions verified against PyPI 2026-07-11.
+yfinance==1.5.1        # default keyless price + FX adapter (US + Indian .NS)
+feedparser==6.0.12     # RSS news adapter
+jugaad-data==0.33.1    # optional: official NSE EOD (bhavcopy) adapter
+# The twelvedata adapter uses only the Python stdlib (urllib) - no package needed.

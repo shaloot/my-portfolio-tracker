@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio</title>
+<meta name="description" content="End-of-day portfolio tracker - value, P&amp;L, charts and news, rebuilt daily from free, keyless data.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app" aria-busy="true">
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="brand">
+      <h1 id="title">Portfolio</h1>
+      <p class="sub" id="owner">Loading&hellip;</p>
+    </div>
+    <div class="meta">
+      <button type="button" class="newsbtn" id="newsbtn" title="Open a printable newspaper report">📰 Newspaper</button>
+      <button type="button" class="csvbtn" id="exportbtn" title="Download the current holdings.csv">Export CSV</button>
+      <button type="button" class="csvbtn" id="importbtn" title="Load a holdings.csv file">Import CSV</button>
+      <input type="file" id="imp-file" accept=".csv,text/csv" hidden>
+      <button type="button" class="addbtn" id="addbtn">+ Add transaction</button>
+      <div class="viewtoggle" id="viewtoggle" role="group" aria-label="Currency view"></div>
+      <span class="dot" id="freshdot" aria-hidden="true"></span>
+      <span id="updated">&middot;</span>
+      <span class="sep">&middot;</span>
+      <span id="basecc">&middot;</span>
+    </div>
+  </header>
+
+  <!-- Pending, unsaved transactions added this session -->
+  <div id="pending-banner" class="pending" hidden role="status">
+    <div class="pending-body">
+      <strong id="pending-title">Pending change not applied yet.</strong>
+      <span id="pending-text"></span>
+      The table and totals update only after you save the downloaded
+      <code>holdings.csv</code> over <code>config/holdings.csv</code> and rebuild:
+      <code class="pending-cmd">python scripts/fetch.py &amp;&amp; bash scripts/build_site.sh</code>
+      then commit &amp; push for the live site.
+    </div>
+    <button type="button" class="pending-x" id="pending-dismiss" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <!-- Hero: total value + the cost-basis waterline chart -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="hero-figures">
+      <div class="fig-block">
+        <span class="eyebrow">Total value <span class="viewnote" id="viewnote"></span></span>
+        <span class="fig-lg mono" id="total-value">&middot;</span>
+      </div>
+      <div class="fig-row">
+        <div class="fig-block">
+          <span class="eyebrow">Today</span>
+          <span class="fig-md mono" id="day-change">&middot;</span>
+        </div>
+        <div class="fig-block">
+          <span class="eyebrow">Total P&amp;L</span>
+          <span class="fig-md mono" id="total-pnl">&middot;</span>
+        </div>
+        <div class="fig-block">
+          <span class="eyebrow">Invested</span>
+          <span class="fig-md mono muted" id="total-cost">&middot;</span>
+        </div>
+        <div class="fig-block" id="realized-block" hidden>
+          <span class="eyebrow">Realized</span>
+          <span class="fig-md mono" id="total-realized">&middot;</span>
+        </div>
+      </div>
+    </div>
+    <figure class="chart-wrap">
+      <figcaption id="hero-h" class="chart-caption">
+        Portfolio value over time <span class="hint">vs. the dashed cost-basis line: filled <span class="pos">green when you're up</span>, <span class="neg">red when down</span>.</span>
+      </figcaption>
+      <div id="chart" class="chart" role="img" aria-label="Portfolio value over time against cost basis"></div>
+    </figure>
+  </section>
+
+  <!-- Holdings ledger -->
+  <section class="ledger" aria-labelledby="ledger-h">
+    <div class="section-head">
+      <h2 id="ledger-h">Holdings</h2>
+      <div class="alloc" id="market-split" aria-label="Allocation by market"></div>
+    </div>
+    <div class="table-scroll">
+      <table class="holdings">
+        <thead>
+          <tr>
+            <th class="l" scope="col">Holding</th>
+            <th class="r" scope="col">Qty</th>
+            <th class="r" scope="col">Avg cost</th>
+            <th class="r" scope="col">Last</th>
+            <th class="r" scope="col">Day</th>
+            <th class="c" scope="col">Trend</th>
+            <th class="r" scope="col">Value</th>
+            <th class="r" scope="col">P&amp;L</th>
+            <th class="r wgt" scope="col">Weight</th>
+            <th class="c" scope="col"><span class="sr-only">Transactions</span></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section class="news" aria-labelledby="news-h">
+    <h2 id="news-h">In the news</h2>
+    <div class="news-grid">
+      <div class="news-col">
+        <h3>Markets</h3>
+        <ul id="market-news" class="feed"></ul>
+      </div>
+      <div class="news-col">
+        <h3>Your holdings</h3>
+        <ul id="holding-news" class="feed"></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Rebuilt daily by CI from end-of-day data. Prices are delayed and for tracking only - not investment advice.</span>
+  </footer>
+</div>
+
+<!-- Add-transaction builder -->
+<div id="txn-modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="txn-title">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2 id="txn-title">Add a transaction</h2>
+      <button type="button" class="modal-x" id="txn-close" aria-label="Close">&times;</button>
+    </div>
+
+    <form id="txn-form" class="txn-form">
+      <div class="fld">
+        <label for="f-symbol">Ticker</label>
+        <input id="f-symbol" list="sym-list" autocomplete="off" placeholder="AAPL or a new ticker" required>
+        <datalist id="sym-list"></datalist>
+      </div>
+      <div class="fld">
+        <label for="f-name">Name</label>
+        <input id="f-name" placeholder="Apple">
+      </div>
+      <div class="fld2">
+        <div class="fld">
+          <label for="f-market">Market</label>
+          <select id="f-market">
+            <option value="IN">IN (NSE/BSE, INR)</option>
+            <option value="US">US (USD)</option>
+          </select>
+        </div>
+        <div class="fld">
+          <label for="f-action">Action</label>
+          <select id="f-action">
+            <option value="buy">Buy</option>
+            <option value="sell">Sell</option>
+          </select>
+        </div>
+      </div>
+      <div class="fld2">
+        <div class="fld">
+          <label for="f-date">Date</label>
+          <input id="f-date" type="date" required>
+        </div>
+        <div class="fld">
+          <label for="f-qty">Quantity</label>
+          <input id="f-qty" type="number" step="any" min="0" placeholder="10" required>
+        </div>
+      </div>
+      <div class="fld">
+        <label for="f-price" id="f-price-label">Price per share</label>
+        <input id="f-price" type="number" step="any" min="0" placeholder="170.00" required>
+      </div>
+      <p class="txn-hint" id="txn-hint"></p>
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" id="txn-cancel">Cancel</button>
+        <button type="submit" class="btn-primary">Add to portfolio</button>
+      </div>
+    </form>
+
+    <div id="txn-result" class="txn-result" hidden>
+      <p class="txn-ok" id="txn-ok-msg"></p>
+      <p class="muted txn-note">
+        The site is static, so this can&rsquo;t recompute in your browser and
+        <strong>won&rsquo;t appear in the table above until you rebuild</strong>. The accurate
+        figures (purchase-date FX, average cost, realized P&amp;L) are computed by the pipeline.
+        Save this over <code>config/holdings.csv</code>, run the commands below, then commit
+        &amp; push for the live site.
+      </p>
+      <div class="txn-actions">
+        <button type="button" class="btn-primary" id="txn-download">Download holdings.csv</button>
+        <button type="button" class="btn-ghost" id="txn-copy">Copy CSV</button>
+      </div>
+      <label class="txn-sub">Then run:</label>
+      <pre class="txn-cmd" id="txn-cmd"></pre>
+      <details>
+        <summary>Preview the updated holdings.csv</summary>
+        <pre class="txn-json" id="txn-json"></pre>
+      </details>
+      <div class="modal-actions">
+        <button type="button" class="btn-ghost" id="txn-done">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Newspaper report overlay -->
+<div id="report-overlay" class="report-overlay" hidden>
+  <div class="report-bar">
+    <span class="report-title">📰 Newspaper report</span>
+    <div class="report-actions">
+      <button type="button" class="btn-primary" id="report-print">&#8681; Download PDF</button>
+      <button type="button" class="btn-ghost report-closebtn" id="report-close">Close</button>
+    </div>
+  </div>
+  <iframe id="report-frame" title="Newspaper report"></iframe>
+</div>
+
+<!-- Per-holding transaction history -->
+<div id="row-modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="row-title">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2 id="row-title">Transactions</h2>
+      <button type="button" class="modal-x" id="row-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="row-txn-scroll">
+      <table class="row-txn">
+        <thead>
+          <tr>
+            <th class="l">Date</th><th class="l">Action</th>
+            <th class="r">Qty</th><th class="r">Price</th>
+            <th class="r">Amount</th><th class="r">Balance</th>
+          </tr>
+        </thead>
+        <tbody id="row-txn-body"></tbody>
+      </table>
+    </div>
+    <div class="row-summary" id="row-summary"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn-ghost" id="row-done">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- Import CSV result -->
+<div id="import-modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="imp-title">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2 id="imp-title">Import CSV</h2>
+      <button type="button" class="modal-x" id="imp-close" aria-label="Close">&times;</button>
+    </div>
+    <p class="txn-ok" id="imp-summary"></p>
+    <div id="imp-errors" class="imp-errors"></div>
+    <p class="muted txn-note">
+      The site is static, so importing doesn&rsquo;t overwrite your repo. Save the
+      cleaned file over <code>config/holdings.csv</code>, then rebuild.
+    </p>
+    <div class="txn-actions">
+      <button type="button" class="btn-primary" id="imp-download">Download holdings.csv</button>
+      <button type="button" class="btn-ghost" id="imp-copy">Copy CSV</button>
+    </div>
+    <label class="txn-sub">Then run:</label>
+    <pre class="txn-cmd" id="imp-cmd"></pre>
+    <details>
+      <summary>Preview parsed holdings</summary>
+      <pre class="txn-json" id="imp-preview"></pre>
+    </details>
+    <div class="modal-actions">
+      <button type="button" class="btn-ghost" id="imp-done">Done</button>
+    </div>
+  </div>
+</div>
+
+<div id="error" class="fatal" hidden>
+  <p><strong>Couldn&rsquo;t load portfolio data.</strong></p>
+  <p>Run the pipeline first: <code>python scripts/fetch.py --mock</code>, then serve the built <code>public/</code> folder. On a deployed site this means the latest CI build hasn&rsquo;t published <code>data/portfolio.json</code> yet.</p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

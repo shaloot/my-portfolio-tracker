@@ -1,0 +1,14 @@
+symbol,name,market,date,action,quantity,price
+RELIANCE,Reliance Industries,IN,,buy,15,2680
+INFY,Infosys,IN,,buy,40,1420.5
+HDFCBANK,HDFC Bank,IN,,buy,25,1585
+AAPL,Apple,US,8/1/24,buy,5,170
+AAPL,Apple,US,3/3/25,buy,7,184
+MSFT,Microsoft,US,,buy,8,395.1
+NVDA,NVIDIA,US,9/10/24,buy,12,88
+NVDA,NVIDIA,US,6/2/25,buy,12,104
+NVDA,NVIDIA,US,1/15/26,sell,4,135
+NVDA,NVIDIA,US,7/10/26,buy,10,209
+NVDA,NVIDIA,US,7/10/26,sell,10,211
+TCS,TCS,IN,9/1/26,buy,100,2322.5
+MAZDOCK,Mazagon Dock Shipbuilders,IN,2026-09-04,buy,10,2520.8

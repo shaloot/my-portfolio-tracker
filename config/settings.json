@@ -1,0 +1,20 @@
+{
+  "_comment": "Non-secret settings. Provider *selection* lives here and is mirrored by env vars (env wins if set). See docs/adr/ for why each default was chosen.",
+  "base_currency": "INR",
+  "title": "Portfolio",
+  "owner": "Student Portfolio",
+  "history_days": 180,
+  "news_per_holding": 3,
+  "news_market_headlines": 8,
+  "news_feeds": {
+    "market": [
+      "https://www.moneycontrol.com/rss/marketreports.xml",
+      "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms",
+      "https://www.livemint.com/rss/markets"
+    ],
+    "us_market": [
+      "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",
+      "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+    ]
+  }
+}

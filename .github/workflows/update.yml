@@ -1,0 +1,76 @@
+name: Update & deploy portfolio
+
+# Central, scheduled fetching (principle 8): one build per day fetches data once,
+# and every visitor then reads static JSON. Also rebuilds on config/site/script
+# changes (principle 6) and on a manual button press.
+on:
+  schedule:
+    - cron: "30 22 * * 1-5"   # 22:30 UTC weekdays: after US close, India EOD already final
+  push:
+    branches: [main]
+    paths:
+      - "config/**"
+      - "site/**"
+      - "scripts/**"
+      - ".github/workflows/**"
+  workflow_dispatch: {}         # manual "Run workflow" button
+
+permissions:
+  contents: write               # commit refreshed data/ back to the repo
+  pages: write                  # publish to GitHub Pages
+  id-token: write
+
+concurrency:
+  group: portfolio-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch end-of-day data
+        env:
+          # Provider selection (principle 3). Defaults are keyless; override via
+          # repo Settings > Variables. Only set the key if you pick twelvedata.
+          PRICE_PROVIDER_IN: ${{ vars.PRICE_PROVIDER_IN || 'yfinance' }}
+          PRICE_PROVIDER_US: ${{ vars.PRICE_PROVIDER_US || 'yfinance' }}
+          NEWS_PROVIDER:     ${{ vars.NEWS_PROVIDER || 'rss' }}
+          FX_PROVIDER:       ${{ vars.FX_PROVIDER || 'yfinance' }}
+          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+        run: python scripts/fetch.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "portfolio-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/*.json
+          git commit -m "chore: daily data refresh [skip ci]" || echo "no changes to commit"
+          git push || echo "nothing to push"
+
+      - name: Assemble static site
+        run: bash scripts/build_site.sh
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
