@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T00:46:08+00:00",
+  "generated_at": "2026-09-25T00:43:01+00:00",
   "base_currency": "INR",
   "display_currencies": [
     "INR",
@@ -7,26 +7,26 @@
   ],
   "fx": {
     "INR": 1.0,
-    "USD": 95.730003
+    "USD": 95.741203
   },
   "totals": {
     "INR": {
-      "value": 1606559.22,
-      "cost": 1176746.25,
-      "pnl": 429812.97,
-      "pnl_pct": 36.53,
-      "realized": 56741.78,
-      "day": -197.6,
-      "day_pct": -0.01
+      "value": 1596601.96,
+      "cost": 1176837.82,
+      "pnl": 419764.14,
+      "pnl_pct": 35.67,
+      "realized": 56748.42,
+      "day": -10109.07,
+      "day_pct": -0.63
     },
     "USD": {
-      "value": 16782.19,
-      "cost": 12292.33,
-      "pnl": 4489.86,
-      "pnl_pct": 36.53,
+      "value": 16676.22,
+      "cost": 12291.86,
+      "pnl": 4384.36,
+      "pnl_pct": 35.67,
       "realized": 592.73,
-      "day": -2.07,
-      "day_pct": -0.01
+      "day": -105.59,
+      "day_pct": -0.63
     }
   },
   "holdings": [
@@ -37,10 +37,9 @@
       "currency": "USD",
       "quantity": 24.0,
       "avg_cost": 119.8636,
-      "last": 228.87,
-      "prev_close": 227.38,
+      "last": 225.51,
+      "prev_close": 228.87,
       "spark": [
-        187.24,
         189.11,
         185.04,
         184.86,
@@ -218,49 +217,50 @@
         219.34,
         222.27,
         227.38,
-        228.87
+        228.87,
+        225.51
       ],
       "stale": false,
       "error": null,
       "figures": {
         "NATIVE": {
           "ccy": "USD",
-          "value": 5492.88,
+          "value": 5412.24,
           "cost": 2876.73,
           "avg": 119.8636,
-          "last": 228.87,
-          "pnl": 2616.15,
-          "pnl_pct": 90.94,
+          "last": 225.51,
+          "pnl": 2535.51,
+          "pnl_pct": 88.14,
           "realized": 592.73,
-          "day": 35.76,
-          "day_pct": 0.66
+          "day": -80.64,
+          "day_pct": -1.47
         },
         "INR": {
           "ccy": "INR",
-          "value": 525833.41,
-          "cost": 275389.11,
-          "avg": 11474.5463,
-          "last": 21909.7254,
-          "pnl": 250444.3,
-          "pnl_pct": 90.94,
-          "realized": 56741.78,
-          "day": 3423.28,
-          "day_pct": 0.66
+          "value": 518174.36,
+          "cost": 275421.33,
+          "avg": 11475.8888,
+          "last": 21590.5982,
+          "pnl": 242753.03,
+          "pnl_pct": 88.14,
+          "realized": 56748.42,
+          "day": -7720.57,
+          "day_pct": -1.47
         },
         "USD": {
           "ccy": "USD",
-          "value": 5492.88,
+          "value": 5412.24,
           "cost": 2876.73,
           "avg": 119.8636,
-          "last": 228.87,
-          "pnl": 2616.15,
-          "pnl_pct": 90.94,
+          "last": 225.51,
+          "pnl": 2535.51,
+          "pnl_pct": 88.14,
           "realized": 592.73,
-          "day": 35.76,
-          "day_pct": 0.66
+          "day": -80.64,
+          "day_pct": -1.47
         }
       },
-      "weight_pct": 32.73
+      "weight_pct": 32.45
     },
     {
       "symbol": "AAPL",
@@ -269,10 +269,9 @@
       "currency": "USD",
       "quantity": 12.0,
       "avg_cost": 178.1667,
-      "last": 339.75,
-      "prev_close": 338.98,
+      "last": 337.02,
+      "prev_close": 339.75,
       "spark": [
-        262.36,
         260.33,
         259.04,
         259.37,
@@ -450,49 +449,50 @@
         337.0,
         336.13,
         338.98,
-        339.75
+        339.75,
+        337.02
       ],
       "stale": false,
       "error": null,
       "figures": {
         "NATIVE": {
           "ccy": "USD",
-          "value": 4077.0,
+          "value": 4044.24,
           "cost": 2138.0,
           "avg": 178.1667,
-          "last": 339.75,
-          "pnl": 1939.0,
-          "pnl_pct": 90.69,
+          "last": 337.02,
+          "pnl": 1906.24,
+          "pnl_pct": 89.16,
           "realized": 0.0,
-          "day": 9.24,
-          "day_pct": 0.23
+          "day": -32.76,
+          "day_pct": -0.8
         },
         "INR": {
           "ccy": "INR",
-          "value": 390291.22,
-          "cost": 204670.75,
-          "avg": 17055.8956,
-          "last": 32524.2686,
-          "pnl": 185620.48,
-          "pnl_pct": 90.69,
+          "value": 387200.39,
+          "cost": 204694.69,
+          "avg": 17057.8911,
+          "last": 32266.6993,
+          "pnl": 182505.7,
+          "pnl_pct": 89.16,
           "realized": 0.0,
-          "day": 884.53,
-          "day_pct": 0.23
+          "day": -3136.49,
+          "day_pct": -0.8
         },
         "USD": {
           "ccy": "USD",
-          "value": 4077.0,
+          "value": 4044.24,
           "cost": 2138.0,
           "avg": 178.1667,
-          "last": 339.75,
-          "pnl": 1939.0,
-          "pnl_pct": 90.69,
+          "last": 337.02,
+          "pnl": 1906.24,
+          "pnl_pct": 89.16,
           "realized": 0.0,
-          "day": 9.24,
-          "day_pct": 0.23
+          "day": -32.76,
+          "day_pct": -0.8
         }
       },
-      "weight_pct": 24.29
+      "weight_pct": 24.25
     },
     {
       "symbol": "MSFT",
@@ -501,10 +501,9 @@
       "currency": "USD",
       "quantity": 8.0,
       "avg_cost": 395.1,
-      "last": 498.0,
-      "prev_close": 501.61,
+      "last": 500.59,
+      "prev_close": 498.0,
       "spark": [
-        478.51,
         483.47,
         478.11,
         479.28,
@@ -682,49 +681,50 @@
         497.75,
         493.78,
         501.61,
-        498.0
+        498.0,
+        500.59
       ],
       "stale": false,
       "error": null,
       "figures": {
         "NATIVE": {
           "ccy": "USD",
-          "value": 3984.0,
+          "value": 4004.72,
           "cost": 3160.8,
           "avg": 395.1,
-          "last": 498.0,
-          "pnl": 823.2,
-          "pnl_pct": 26.04,
+          "last": 500.59,
+          "pnl": 843.92,
+          "pnl_pct": 26.7,
           "realized": 0.0,
-          "day": -28.88,
-          "day_pct": -0.72
+          "day": 20.72,
+          "day_pct": 0.52
         },
         "INR": {
           "ccy": "INR",
-          "value": 381388.33,
-          "cost": 302583.39,
-          "avg": 37822.9243,
-          "last": 47673.5417,
-          "pnl": 78804.94,
-          "pnl_pct": 26.04,
+          "value": 383416.71,
+          "cost": 302618.8,
+          "avg": 37827.3494,
+          "last": 47927.0886,
+          "pnl": 80797.91,
+          "pnl_pct": 26.7,
           "realized": 0.0,
-          "day": -2764.67,
-          "day_pct": -0.72
+          "day": 1983.75,
+          "day_pct": 0.52
         },
         "USD": {
           "ccy": "USD",
-          "value": 3984.0,
+          "value": 4004.72,
           "cost": 3160.8,
           "avg": 395.1,
-          "last": 498.0,
-          "pnl": 823.2,
-          "pnl_pct": 26.04,
+          "last": 500.59,
+          "pnl": 843.92,
+          "pnl_pct": 26.7,
           "realized": 0.0,
-          "day": -28.88,
-          "day_pct": -0.72
+          "day": 20.72,
+          "day_pct": 0.52
         }
       },
-      "weight_pct": 23.74
+      "weight_pct": 24.01
     },
     {
       "symbol": "TCS",
@@ -733,10 +733,9 @@
       "currency": "INR",
       "quantity": 100.0,
       "avg_cost": 2322.5,
-      "last": 2089.6001,
-      "prev_close": 2105.0,
+      "last": 2087.0,
+      "prev_close": 2089.6001,
       "spark": [
-        3295.6001,
         3203.8999,
         3207.8,
         3239.6001,
@@ -915,49 +914,50 @@
         2105.0,
         2128.7,
         2105.0,
-        2089.6001
+        2089.6001,
+        2087.0
       ],
       "stale": false,
       "error": null,
       "figures": {
         "NATIVE": {
           "ccy": "INR",
-          "value": 208960.01,
+          "value": 208700.0,
           "cost": 232250.0,
           "avg": 2322.5,
-          "last": 2089.6001,
-          "pnl": -23289.99,
-          "pnl_pct": -10.03,
+          "last": 2087.0,
+          "pnl": -23550.0,
+          "pnl_pct": -10.14,
           "realized": 0.0,
-          "day": -1539.99,
-          "day_pct": -0.73
+          "day": -260.01,
+          "day_pct": -0.12
         },
         "INR": {
           "ccy": "INR",
-          "value": 208960.01,
+          "value": 208700.0,
           "cost": 232250.0,
           "avg": 2322.5,
-          "last": 2089.6001,
-          "pnl": -23289.99,
-          "pnl_pct": -10.03,
+          "last": 2087.0,
+          "pnl": -23550.0,
+          "pnl_pct": -10.14,
           "realized": 0.0,
-          "day": -1539.99,
-          "day_pct": -0.73
+          "day": -260.01,
+          "day_pct": -0.12
         },
         "USD": {
           "ccy": "USD",
-          "value": 2182.81,
-          "cost": 2426.09,
-          "avg": 24.2609,
-          "last": 21.8281,
-          "pnl": -243.29,
-          "pnl_pct": -10.03,
+          "value": 2179.83,
+          "cost": 2425.81,
+          "avg": 24.2581,
+          "last": 21.7983,
+          "pnl": -245.98,
+          "pnl_pct": -10.14,
           "realized": 0.0,
-          "day": -16.09,
-          "day_pct": -0.73
+          "day": -2.72,
+          "day_pct": -0.12
         }
       },
-      "weight_pct": 13.01
+      "weight_pct": 13.07
     },
     {
       "symbol": "INFY",
@@ -966,10 +966,9 @@
       "currency": "INR",
       "quantity": 40.0,
       "avg_cost": 1420.5,
-      "last": 1020.5,
-      "prev_close": 1029.4,
+      "last": 1014.5,
+      "prev_close": 1020.5,
       "spark": [
-        1639.0,
         1613.3,
         1614.1,
         1595.9,
@@ -1148,46 +1147,47 @@
         1051.4,
         1038.5,
         1029.4,
-        1020.5
+        1020.5,
+        1014.5
       ],
       "stale": false,
       "error": null,
       "figures": {
         "NATIVE": {
           "ccy": "INR",
-          "value": 40820.0,
+          "value": 40580.0,
           "cost": 56820.0,
           "avg": 1420.5,
-          "last": 1020.5,
-          "pnl": -16000.0,
-          "pnl_pct": -28.16,
+          "last": 1014.5,
+          "pnl": -16240.0,
+          "pnl_pct": -28.58,
           "realized": 0.0,
-          "day": -356.0,
-          "day_pct": -0.86
+          "day": -240.0,
+          "day_pct": -0.59
         },
         "INR": {
           "ccy": "INR",
-          "value": 40820.0,
+          "value": 40580.0,
           "cost": 56820.0,
           "avg": 1420.5,
-          "last": 1020.5,
-          "pnl": -16000.0,
-          "pnl_pct": -28.16,
+          "last": 1014.5,
+          "pnl": -16240.0,
+          "pnl_pct": -28.58,
           "realized": 0.0,
-          "day": -356.0,
-          "day_pct": -0.86
+          "day": -240.0,
+          "day_pct": -0.59
         },
         "USD": {
           "ccy": "USD",
-          "value": 426.41,
-          "cost": 593.54,
-          "avg": 14.8386,
-          "last": 10.6602,
-          "pnl": -167.14,
-          "pnl_pct": -28.16,
+          "value": 423.85,
+          "cost": 593.47,
+          "avg": 14.8369,
+          "last": 10.5963,
+          "pnl": -169.62,
+          "pnl_pct": -28.58,
           "realized": 0.0,
-          "day": -3.72,
-          "day_pct": -0.86
+          "day": -2.51,
+          "day_pct": -0.59
         }
       },
       "weight_pct": 2.54
@@ -1199,10 +1199,9 @@
       "currency": "INR",
       "quantity": 10.0,
       "avg_cost": 2520.8,
-      "last": 2211.5,
-      "prev_close": 2204.0,
+      "last": 2202.0,
+      "prev_close": 2211.5,
       "spark": [
-        2511.3999,
         2480.3999,
         2500.5,
         2521.2,
@@ -1381,46 +1380,47 @@
         2280.0,
         2232.0,
         2204.0,
-        2211.5
+        2211.5,
+        2202.0
       ],
       "stale": false,
       "error": null,
       "figures": {
         "NATIVE": {
           "ccy": "INR",
-          "value": 22115.0,
+          "value": 22020.0,
           "cost": 25208.0,
           "avg": 2520.8,
-          "last": 2211.5,
-          "pnl": -3093.0,
-          "pnl_pct": -12.27,
+          "last": 2202.0,
+          "pnl": -3188.0,
+          "pnl_pct": -12.65,
           "realized": 0.0,
-          "day": 75.0,
-          "day_pct": 0.34
+          "day": -95.0,
+          "day_pct": -0.43
         },
         "INR": {
           "ccy": "INR",
-          "value": 22115.0,
+          "value": 22020.0,
           "cost": 25208.0,
           "avg": 2520.8,
-          "last": 2211.5,
-          "pnl": -3093.0,
-          "pnl_pct": -12.27,
+          "last": 2202.0,
+          "pnl": -3188.0,
+          "pnl_pct": -12.65,
           "realized": 0.0,
-          "day": 75.0,
-          "day_pct": 0.34
+          "day": -95.0,
+          "day_pct": -0.43
         },
         "USD": {
           "ccy": "USD",
-          "value": 231.01,
-          "cost": 263.32,
-          "avg": 26.3324,
-          "last": 23.1014,
-          "pnl": -32.31,
-          "pnl_pct": -12.27,
+          "value": 230.0,
+          "cost": 263.29,
+          "avg": 26.3293,
+          "last": 22.9995,
+          "pnl": -33.3,
+          "pnl_pct": -12.65,
           "realized": 0.0,
-          "day": 0.78,
-          "day_pct": 0.34
+          "day": -0.99,
+          "day_pct": -0.43
         }
       },
       "weight_pct": 1.38
@@ -1432,10 +1432,9 @@
       "currency": "INR",
       "quantity": 15.0,
       "avg_cost": 2680.0,
-      "last": 1248.0,
-      "prev_close": 1240.4,
+      "last": 1219.2,
+      "prev_close": 1248.0,
       "spark": [
-        1504.2,
         1470.6,
         1475.3,
         1483.2,
@@ -1614,49 +1613,50 @@
         1226.4,
         1247.4,
         1240.4,
-        1248.0
+        1248.0,
+        1219.2
       ],
       "stale": false,
       "error": null,
       "figures": {
         "NATIVE": {
           "ccy": "INR",
-          "value": 18720.0,
+          "value": 18288.0,
           "cost": 40200.0,
           "avg": 2680.0,
-          "last": 1248.0,
-          "pnl": -21480.0,
-          "pnl_pct": -53.43,
+          "last": 1219.2,
+          "pnl": -21912.0,
+          "pnl_pct": -54.51,
           "realized": 0.0,
-          "day": 114.0,
-          "day_pct": 0.61
+          "day": -432.0,
+          "day_pct": -2.31
         },
         "INR": {
           "ccy": "INR",
-          "value": 18720.0,
+          "value": 18288.0,
           "cost": 40200.0,
           "avg": 2680.0,
-          "last": 1248.0,
-          "pnl": -21480.0,
-          "pnl_pct": -53.43,
+          "last": 1219.2,
+          "pnl": -21912.0,
+          "pnl_pct": -54.51,
           "realized": 0.0,
-          "day": 114.0,
-          "day_pct": 0.61
+          "day": -432.0,
+          "day_pct": -2.31
         },
         "USD": {
           "ccy": "USD",
-          "value": 195.55,
-          "cost": 419.93,
-          "avg": 27.9954,
-          "last": 13.0367,
-          "pnl": -224.38,
-          "pnl_pct": -53.43,
+          "value": 191.01,
+          "cost": 419.88,
+          "avg": 27.9921,
+          "last": 12.7343,
+          "pnl": -228.87,
+          "pnl_pct": -54.51,
           "realized": 0.0,
-          "day": 1.19,
-          "day_pct": 0.61
+          "day": -4.51,
+          "day_pct": -2.31
         }
       },
-      "weight_pct": 1.17
+      "weight_pct": 1.15
     },
     {
       "symbol": "HDFCBANK",
@@ -1665,10 +1665,9 @@
       "currency": "INR",
       "quantity": 25.0,
       "avg_cost": 1585.0,
-      "last": 737.25,
-      "prev_close": 738.6,
+      "last": 728.9,
+      "prev_close": 737.25,
       "spark": [
-        949.05,
         946.7,
         939.0,
         936.95,
@@ -1847,49 +1846,50 @@
         731.0,
         739.5,
         738.6,
-        737.25
+        737.25,
+        728.9
       ],
       "stale": false,
       "error": null,
       "figures": {
         "NATIVE": {
           "ccy": "INR",
-          "value": 18431.25,
+          "value": 18222.5,
           "cost": 39625.0,
           "avg": 1585.0,
-          "last": 737.25,
-          "pnl": -21193.75,
-          "pnl_pct": -53.49,
+          "last": 728.9,
+          "pnl": -21402.5,
+          "pnl_pct": -54.01,
           "realized": 0.0,
-          "day": -33.75,
-          "day_pct": -0.18
+          "day": -208.75,
+          "day_pct": -1.13
         },
         "INR": {
           "ccy": "INR",
-          "value": 18431.25,
+          "value": 18222.5,
           "cost": 39625.0,
           "avg": 1585.0,
-          "last": 737.25,
-          "pnl": -21193.75,
-          "pnl_pct": -53.49,
+          "last": 728.9,
+          "pnl": -21402.5,
+          "pnl_pct": -54.01,
           "realized": 0.0,
-          "day": -33.75,
-          "day_pct": -0.18
+          "day": -208.75,
+          "day_pct": -1.13
         },
         "USD": {
           "ccy": "USD",
-          "value": 192.53,
-          "cost": 413.92,
-          "avg": 16.557,
-          "last": 7.7013,
-          "pnl": -221.39,
-          "pnl_pct": -53.49,
+          "value": 190.33,
+          "cost": 413.88,
+          "avg": 16.555,
+          "last": 7.6132,
+          "pnl": -223.55,
+          "pnl_pct": -54.01,
           "realized": 0.0,
-          "day": -0.35,
-          "day_pct": -0.18
+          "day": -2.18,
+          "day_pct": -1.13
         }
       },
-      "weight_pct": 1.15
+      "weight_pct": 1.14
     }
   ],
   "config_holdings": [
