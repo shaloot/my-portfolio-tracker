@@ -1,6 +1,9 @@
 # ADR 0004 - FX source for base-currency conversion
 
-**Status:** Accepted · **Date:** 2026-07-11
+**Status:** Superseded by [ADR 0005](0005-india-only-scope.md). The book is
+India-only and INR-based, so no FX rate is fetched and none of the behaviour
+below runs. Kept as the record of how multi-currency cost basis was designed
+· **Date:** 2026-07-11
 
 ## Context
 Holdings span INR and USD; totals must be shown in one base currency

@@ -3,12 +3,14 @@
 
 The same job as the app's "Add transaction" button, for people who prefer the
 CLI. It only edits the ledger; run `python scripts/fetch.py` afterwards to
-recompute with accurate purchase-date FX, average cost, and realized P&L.
+recompute the average cost and realized P&L.
+
+Prices are in INR, the quantity is per share.
 
 Examples:
-    python scripts/add_lot.py AAPL US buy  2026-02-10 3 205
-    python scripts/add_lot.py NVDA US sell 2026-06-01 4 135 --rebuild
-    python scripts/add_lot.py TCS  IN buy  2026-01-20 10 3800 --name "Tata Consultancy"
+    python scripts/add_lot.py RELIANCE buy  2026-02-10 3 1420
+    python scripts/add_lot.py INFY     sell 2026-06-01 4 1655 --rebuild
+    python scripts/add_lot.py TCS      buy  2026-01-20 10 3800 --name "Tata Consultancy"
 
 Add --rebuild to also run the pipeline + site build in one go. It then prints the
 git commit/push command to publish (CI recomputes and redeploys on push).
@@ -27,7 +29,7 @@ from core import holdings_io  # noqa: E402
 
 
 def _rebuild() -> int:
-    """Run the pipeline + site assembly locally (accurate FX / avg cost / realized)."""
+    """Run the pipeline + site assembly locally (accurate avg cost / realized)."""
     steps = [
         ("fetch", [sys.executable, str(HERE / "fetch.py")]),
         ("build", ["bash", str(HERE / "build_site.sh")]),
@@ -46,11 +48,10 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("symbol")
-    ap.add_argument("market", choices=["IN", "US"])
     ap.add_argument("action", choices=["buy", "sell"])
     ap.add_argument("date", help="YYYY-MM-DD")
     ap.add_argument("quantity", type=float)
-    ap.add_argument("price", type=float, help="per share, in the holding's own currency")
+    ap.add_argument("price", type=float, help="per share, in INR")
     ap.add_argument("--name", default=None, help="display name (for a new holding)")
     ap.add_argument("--config", default=str(HERE.parent / "config"))
     ap.add_argument("--rebuild", action="store_true",
@@ -73,7 +74,7 @@ def main() -> int:
         where = "updated"
     else:
         holdings.append({"symbol": sym, "name": args.name or sym,
-                         "market": args.market, "lots": [lot]})
+                         "market": "IN", "lots": [lot]})
         where = "added"
 
     out = cfg_dir / "holdings.csv"           # always write the canonical CSV

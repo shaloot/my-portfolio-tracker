@@ -1,5 +1,6 @@
 {
   "_comment": "Non-secret settings. Provider *selection* lives here and is mirrored by env vars (env wins if set). See docs/adr/ for why each default was chosen.",
+  "_news_feeds": "market = Indian market wires. global = world macro wires (rates, oil, currencies) that move Indian equities; both are merged into one headline list.",
   "base_currency": "INR",
   "title": "Portfolio",
   "owner": "Student Portfolio",
@@ -12,7 +13,7 @@
       "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms",
       "https://www.livemint.com/rss/markets"
     ],
-    "us_market": [
+    "global": [
       "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",
       "https://www.cnbc.com/id/100003114/device/rss/rss.html"
     ]

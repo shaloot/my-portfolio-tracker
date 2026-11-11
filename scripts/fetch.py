@@ -202,7 +202,9 @@ def main() -> int:
     # ---- news (any failure is isolated per feed / per symbol) ---------------
     news_name, news = registry.news_provider()
     feeds = settings.get("news_feeds", {})
-    market_feeds = feeds.get("market", []) + feeds.get("us_market", [])
+    # Indian market wires plus world-macro wires; the macro feeds are kept
+    # because rates/oil/currency moves drive the NSE tape.
+    market_feeds = feeds.get("market", []) + feeds.get("global", [])
     try:
         market_items = news.get_market_news(
             market_feeds, int(settings.get("news_market_headlines", 8)))

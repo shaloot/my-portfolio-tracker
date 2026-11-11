@@ -85,7 +85,7 @@
   <section class="ledger" aria-labelledby="ledger-h">
     <div class="section-head">
       <h2 id="ledger-h">Holdings</h2>
-      <div class="alloc" id="market-split" aria-label="Allocation by market"></div>
+      <div class="alloc" id="concentration" aria-label="Portfolio concentration"></div>
     </div>
     <div class="table-scroll">
       <table class="holdings">
@@ -139,21 +139,14 @@
     <form id="txn-form" class="txn-form">
       <div class="fld">
         <label for="f-symbol">Ticker</label>
-        <input id="f-symbol" list="sym-list" autocomplete="off" placeholder="AAPL or a new ticker" required>
+        <input id="f-symbol" list="sym-list" autocomplete="off" placeholder="RELIANCE or a new ticker" required>
         <datalist id="sym-list"></datalist>
       </div>
       <div class="fld">
         <label for="f-name">Name</label>
-        <input id="f-name" placeholder="Apple">
+        <input id="f-name" placeholder="Reliance Industries">
       </div>
       <div class="fld2">
-        <div class="fld">
-          <label for="f-market">Market</label>
-          <select id="f-market">
-            <option value="IN">IN (NSE/BSE, INR)</option>
-            <option value="US">US (USD)</option>
-          </select>
-        </div>
         <div class="fld">
           <label for="f-action">Action</label>
           <select id="f-action">
@@ -161,20 +154,20 @@
             <option value="sell">Sell</option>
           </select>
         </div>
-      </div>
-      <div class="fld2">
         <div class="fld">
           <label for="f-date">Date</label>
           <input id="f-date" type="date" required>
         </div>
+      </div>
+      <div class="fld2">
         <div class="fld">
           <label for="f-qty">Quantity</label>
           <input id="f-qty" type="number" step="any" min="0" placeholder="10" required>
         </div>
-      </div>
-      <div class="fld">
-        <label for="f-price" id="f-price-label">Price per share</label>
-        <input id="f-price" type="number" step="any" min="0" placeholder="170.00" required>
+        <div class="fld">
+          <label for="f-price" id="f-price-label">Price per share (INR)</label>
+          <input id="f-price" type="number" step="any" min="0" placeholder="2680.00" required>
+        </div>
       </div>
       <p class="txn-hint" id="txn-hint"></p>
       <div class="modal-actions">
@@ -188,7 +181,7 @@
       <p class="muted txn-note">
         The site is static, so this can&rsquo;t recompute in your browser and
         <strong>won&rsquo;t appear in the table above until you rebuild</strong>. The accurate
-        figures (purchase-date FX, average cost, realized P&amp;L) are computed by the pipeline.
+        figures (average cost and realized P&amp;L) are computed by the pipeline.
         Save this over <code>config/holdings.csv</code>, run the commands below, then commit
         &amp; push for the live site.
       </p>

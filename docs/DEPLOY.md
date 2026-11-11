@@ -41,14 +41,14 @@ After this it re-runs automatically every weekday evening and on every change yo
 push.
 
 ## 4. (Optional) Switch to a keyed provider
-Only if you want Twelve Data for US reliability:
+Only if you want Twelve Data as a more reliable NSE price source than yfinance:
 
 - **Settings -> Secrets and variables -> Actions -> Variables** -> add
-  `PRICE_PROVIDER_US` = `twelvedata`.
+  `PRICE_PROVIDER_IN` = `twelvedata`.
 - **-> Secrets** -> add `TWELVEDATA_API_KEY` = your key from twelvedata.com.
 
-*What this did:* the next build uses Twelve Data for US symbols. The key stays in
-CI and is never sent to the browser.
+*What this did:* the next build prices your holdings through Twelve Data. The key
+stays in CI and is never sent to the browser.
 
 ---
 

@@ -1,5 +1,10 @@
 # Working notes for the coding agent
 
+> **Superseded — this bundle is the original build spec, kept as the record of
+> what was handed over. It describes a dual-market product. The project is now
+> India-only (NSE/BSE, INR); see `docs/adr/0005-india-only-scope.md`. Where this
+> document and the current code disagree, the code and ADR 0005 win.**
+
 You're building the app specified in `REQUIREMENTS.md`. A reference
 implementation is in `reference-implementation.zip` — consult it to confirm
 decisions and the JSON data contract, but write and test fresh code here, where

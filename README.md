@@ -1,9 +1,9 @@
 # Portfolio Tracker
 
-An end-of-day (EOD) portfolio tracker for **Indian (NSE/BSE) and US equities** in
-a single view. It shows total value, day change, total P&L, invested cost, a hero
-value-vs-cost chart, a per-holding ledger (with trend sparklines and allocation),
-and market + per-holding news.
+An end-of-day (EOD) portfolio tracker for **Indian (NSE/BSE) equities**. Every
+figure is in **INR**. It shows total value, day change, total P&L, invested cost,
+a hero value-vs-cost chart, a per-holding ledger (with trend sparklines and
+concentration), and market + per-holding news.
 
 It rebuilds itself **once a day** using **only free, open, keyless** tools and
 deploys **free** on GitHub Pages. There is **no backend, no database, and no paid
@@ -21,12 +21,12 @@ advice.**
 config/holdings.csv    ─┐
                         │    GitHub Action (daily cron)
 config/settings.json   ─┼─▶   scripts/fetch.py   ──▶  data/*.json  ──▶  GitHub Pages
-                        │     (prices + FX + news,       (committed        (static site
+                        │     (prices + news,            (committed        (static site
 providers/ (adapters)  ─┘      computes P&L)              back to repo)      reads JSON)
 ```
 
 - **`scripts/fetch.py`** is the whole pipeline. It reads your config, fetches
-  prices / FX / news through pluggable adapters, computes every figure, and
+  prices and news through pluggable adapters, computes every figure, and
   writes `data/portfolio.json`, `data/history.json`, `data/news.json`.
 - **`scripts/core/`** holds the pure math (`compute.py`), the fixed provider
   interfaces (`interfaces.py`), and the provider registry (`registry.py`).
@@ -104,9 +104,9 @@ cd public && python -m http.server 8000
 ```bash
 python scripts/tests/test_compute.py
 ```
-*What this did:* ran the pure-math unit tests (totals, FX conversion, stale
-fallback, chart crossing case, lot-based avg cost, forex-aware cost, buy/sell
-realized P&L, and CSV ledger parsing) with no network. You should see
+*What this did:* ran the pure-math unit tests (totals, currency conversion,
+stale fallback, chart crossing case, lot-based avg cost, conversion-aware cost,
+buy/sell realized P&L, and CSV ledger parsing) with no network. You should see
 `14 tests passed.`
 
 ### Manage your holdings (CSV)
@@ -118,25 +118,24 @@ Sheets, Numbers) or any text editor, no brackets to break:
 ```csv
 symbol,name,market,date,action,quantity,price
 RELIANCE,Reliance Industries,IN,,,15,2680.00
-AAPL,Apple,US,2024-08-01,buy,5,170.00
-AAPL,Apple,US,2025-03-03,buy,7,184.00
-NVDA,NVIDIA,US,2024-09-10,buy,12,88.00
-NVDA,NVIDIA,US,2026-01-15,sell,4,135.00
+INFY,Infosys,IN,2024-08-01,buy,40,1420.50
+INFY,Infosys,IN,2025-03-03,buy,20,1655.00
+TCS,TCS,IN,2024-09-10,buy,12,3880.00
+TCS,TCS,IN,2026-01-15,sell,4,4135.00
 ```
 
 - **One row per transaction.** Repeat the ticker for each further buy/sale.
-- `symbol` - plain ticker (`AAPL`, `RELIANCE`); the `.NS` suffix for NSE is added in code.
-- `market` - `IN` (NSE/BSE, INR) or `US` (USD).
+- `symbol` - plain ticker (`RELIANCE`, `INFY`); the `.NS` suffix for NSE is added in code.
+- `market` - always `IN` (NSE/BSE). The column is kept so existing ledgers and
+  spreadsheet exports import unchanged; a blank cell is read as `IN`.
 - `date` - `YYYY-MM-DD`. Leave it (and `action`) **blank** for an opening
-  position you don't want to date (valued at today's FX).
+  position you don't want to date.
 - `action` - `buy` or `sell` (blank = buy).
-- `quantity` / `price` - per share, in the holding's **own** currency.
+- `quantity` / `price` - per share, in INR.
 
 The pipeline does the rest: it replays the rows in date order with **average-cost
-accounting** (sums quantity, computes the weighted-average cost, books **realized
-P&L** on sells), and values each lot at the **USD/INR rate on its own date**, so
-your INR/USD P&L captures currency moves as well as price moves. Historical FX is
-fetched automatically (keyless) - you never enter an exchange rate.
+accounting** - summing quantity, computing the weighted-average cost, and booking
+**realized P&L** on sells.
 
 **Working with the ledger in the app.** The masthead has three CSV controls:
 - **Export CSV** - download the current `config/holdings.csv` in one click.
@@ -152,14 +151,14 @@ fetched automatically (keyless) - you never enter an exchange rate.
 > includes them**, so you can make several edits and download the full result once.
 > The main table's value/P&L still show the last *built* figures until you save the
 > file over `config/holdings.csv` and rebuild (and commit + push for the live site) -
-> because the accurate purchase-date FX, average cost, and realized P&L are computed
+> because the accurate average cost and realized P&L are computed
 > by the pipeline, not the browser.
 
 **Three ways to record a transaction:**
 1. **In the app** - **+ Add transaction** (or **Import CSV**), then save the file it gives you.
 2. **CLI (one command)** - edits the CSV *and* rebuilds in one go:
    ```bash
-   python scripts/add_lot.py NVDA US sell 2026-03-20 10 150 --rebuild
+   python scripts/add_lot.py TCS sell 2026-03-20 10 4150 --rebuild
    ```
    It writes `config/holdings.csv`, runs `fetch.py` + `build_site.sh`, then prints the
    `git commit && git push` to publish. (Drop `--rebuild` to only edit the file.)
@@ -179,16 +178,14 @@ summary (net quantity, average cost, invested, market value, unrealized and
 realized P&L) in the holding's own currency.
 
 **Newspaper report.** The **📰 Newspaper** button (top right) opens a printable,
-newspaper-styled report: a masthead and lead story, a dual-currency **By the
-Numbers** box and two mini charts (INR + USD), a 3-column **Company Briefs** grid
+newspaper-styled report: a masthead and lead story, a **By the Numbers** box
+and a value-vs-cost chart, a 3-column **Company Briefs** grid
 that pairs each holding's figures with its own headlines, and a **Market Wire**.
 The **Download PDF** button prints it via the browser's Save-as-PDF.
 
 > Column headers are case-insensitive and accept friendly aliases (`ticker`,
 > `qty`, `shares`, `cost`...). A `config/holdings.json` file (lot- or legacy
 > `{quantity, avg_cost}` style) is still read as a fallback if no CSV exists.
-> If the FX source can't supply history for a date, that lot falls back to
-> today's rate and the build still completes.
 
 Base currency, history length, and news feeds live in **`config/settings.json`**.
 
@@ -204,7 +201,7 @@ network at build time only - never from the browser).
 
 | Package | Version | Used by | What it does |
 |---|---|---|---|
-| **yfinance** | `1.5.1` | `providers/price_yfinance.py`, `providers/fx.py` | Reads Yahoo Finance's public endpoints for EOD closes + short history (US as-is, Indian tickers with a `.NS` suffix) and for the FX pair (`USDINR=X`). The default price and FX source. |
+| **yfinance** | `1.5.1` | `providers/price_yfinance.py` | Reads Yahoo Finance's public endpoints for EOD closes + short history (Indian tickers get a `.NS` suffix). The default price source. |
 | **feedparser** | `6.0.12` | `providers/news_rss.py` | Parses RSS/Atom feeds into structured entries, for both the market headlines and the per-holding Google News search results. |
 | **jugaad-data** | `0.33.1` | `providers/price_bhavcopy.py` | Optional official NSE end-of-day (bhavcopy) source for Indian equities. Absorbs NSE's URL/cookie churn so we don't hand-roll scraping. Only imported when `PRICE_PROVIDER_IN=bhavcopy`. |
 
@@ -228,12 +225,11 @@ Notes:
 
 | Service | Used by | Purpose | Key? | Free tier |
 |---|---|---|---|---|
-| **Yahoo Finance** (via yfinance) | `price_yfinance`, `fx` | Default EOD prices (IN + US) and the FX rate | No | No formal limit (unofficial) |
+| **Yahoo Finance** (via yfinance) | `price_yfinance` | Default EOD prices for NSE/BSE tickers | No | No formal limit (unofficial) |
 | **NSE bhavcopy** (via jugaad-data) | `price_bhavcopy` | Optional official Indian EOD prices | No | Unlimited, official |
 | **Google News RSS** | `news_rss` | Per-holding company news (search RSS per name) | No | Effectively unlimited |
-| **Publisher RSS feeds** (Moneycontrol, ET Markets, Mint, WSJ, CNBC) | `news_rss` | Market headlines; the feed list is in `settings.json` | No | Effectively unlimited |
-| **open.er-api.com** | `fx` (`exchangerate_host`) | Keyless FX fallback behind the same interface | No | Open API, no key |
-| **Twelve Data** | `price_twelvedata` | Optional keyed US/IN price fallback for reliability | **Yes** | 800 req/day, 8 req/min |
+| **Publisher RSS feeds** | `news_rss` | Market headlines - Indian wires plus world-macro wires; the feed list is in `settings.json` | No | Effectively unlimited |
+| **Twelve Data** | `price_twelvedata` | Optional keyed NSE price fallback for reliability | **Yes** | 800 req/day, 8 req/min |
 
 The **only** secret in the entire system is the optional `TWELVEDATA_API_KEY`,
 and it is used at build time only (in CI secrets) - it never reaches the browser.
@@ -246,9 +242,7 @@ adapter, **docs/adr** records why.
 | Env var | Default | Alternatives |
 |---|---|---|
 | `PRICE_PROVIDER_IN` | `yfinance` | `bhavcopy`, `twelvedata` |
-| `PRICE_PROVIDER_US` | `yfinance` | `twelvedata` |
 | `NEWS_PROVIDER` | `rss` | - |
-| `FX_PROVIDER` | `yfinance` | `exchangerate_host` |
 
 Example - use official NSE data for Indian holdings:
 ```bash
@@ -272,27 +266,13 @@ system fonts and still works.
 ## Deploy free on GitHub Pages
 
 The included GitHub Action (`.github/workflows/update.yml`) runs `fetch.py` on a
-daily cron (after US close) and on config/site/script changes, commits refreshed
+daily cron (after the NSE close) and on config/site/script changes, commits refreshed
 `data/*.json` back to the repo, and publishes `public/` to GitHub Pages -
 keyless unless you opt into Twelve Data.
 
 Full copy-paste setup steps (create repo, push, enable Pages, run the workflow),
 each with a plain-language "what this did", are in
 [`docs/DEPLOY.md`](docs/DEPLOY.md).
-
-## Currency views
-
-A global toggle (top right of the page) shows the whole portfolio in one of:
-- **Native** - each holding row in its own currency (INR for IN, USD for US). The
-  summary has no single currency, so it shows **both** (dual INR + USD figures)
-  and **two charts**, one per currency.
-- **INR** - every number (including per-share Avg cost / Last) in the base currency.
-- **USD** - every number in US dollars.
-
-The pipeline precomputes every figure in each view (cost basis is forex-aware, so
-INR/USD P&L includes currency moves as well as price moves; a **Realized** figure
-appears once you've sold something), so switching is instant and no FX math
-happens in the browser. Your choice is remembered locally.
 
 ## Reading the hero chart (the "cost-basis waterline")
 
@@ -302,8 +282,6 @@ happens in the browser. Your choice is remembered locally.
   where below** (at a loss); the line and the end dot take the ending colour.
 - So a line that starts under the dashed line and rises through it shows the
   moment your position moved from a loss into a gain.
-- In **Native** view you get **two charts** (INR and USD), since a mixed-currency
-  book has no single value; **INR**/**USD** view shows one chart in that currency.
 
 **Hover** any point on the chart for a tooltip with the date, that day's value,
 the day-over-day change, and P&L versus cost.
@@ -324,8 +302,8 @@ portfolio.json: { generated_at, base_currency, display_currencies:[..],
     figures:{ NATIVE:{ccy,value,cost,avg,last,pnl,pnl_pct,realized,day,day_pct},
               <CCY>:{..}, .. } } ],
   config_holdings:[..] }   // raw ledger, so the app's Add-transaction builder can export CSV
-    // quantity + avg_cost are computed from the CSV lots; figures are forex-aware,
-    // and totals[<CCY>] additionally carry `realized` (P&L booked on sales).
+    // quantity + avg_cost are computed from the CSV lots, and totals[<CCY>]
+    // additionally carry `realized` (P&L booked on sales).
 history.json:  { base_currency, display_currencies:[..], generated_at,
                  series:[ { date, value:{<CCY>:n,..}, cost:{<CCY>:n,..} } ] }
 news.json:     { generated_at, market:[ {title,url,source,published} ],

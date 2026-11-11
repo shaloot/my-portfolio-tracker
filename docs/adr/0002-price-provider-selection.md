@@ -1,6 +1,8 @@
 # ADR 0002 - Price provider selection
 
-**Status:** Accepted · **Date:** 2026-07-11 · Limits verified 2026-07-11
+**Status:** Superseded by [ADR 0005](0005-india-only-scope.md) (the product is
+India-only; the non-Indian rows below are kept as the record of why the provider
+abstraction exists) · **Date:** 2026-07-11 · Limits verified 2026-07-11
 
 ## Context
 We hold both Indian (NSE/BSE) and US equities and need end-of-day closes plus a

@@ -2,9 +2,8 @@
    renders; no business logic beyond formatting and drawing. All the math was
    done at build time by scripts/fetch.py, so this stays dumb and static.
 
-   The pipeline precomputes every figure in each view currency (NATIVE + each
-   display currency), so switching the currency view is just re-picking which
-   precomputed numbers to show - no FX math happens in the browser. */
+   The pipeline precomputes every figure, so the browser only picks which
+   precomputed number to show - no portfolio math happens here. */
 (function () {
   "use strict";
 
@@ -22,7 +21,7 @@
   let pendingSymbols = new Set();
 
   /* ---- formatting -------------------------------------------------- */
-  const localeFor = (ccy) => (ccy === "INR" ? "en-IN" : "en-US");
+  const localeFor = () => "en-IN";
   const money = (v, ccy, dp) =>
     new Intl.NumberFormat(localeFor(ccy), {
       style: "currency", currency: ccy, maximumFractionDigits: dp == null ? 0 : dp,
@@ -78,7 +77,10 @@
     pendingSymbols = new Set();
     refreshDatalist();
 
-    buildToggle(displays);
+    // One display currency means Native and that currency are the same view,
+    // so the switch has nothing to switch between.
+    if (displays.length > 1) buildToggle(displays);
+    else { VIEW = displays[0]; $("viewtoggle").hidden = true; }
 
     document.title = p.title || "Portfolio";
     $("owner").textContent = "End-of-day snapshot";
@@ -124,13 +126,13 @@
     const p = DATA.p;
     renderHero(p);
     drawChartArea(DATA.hist, p);
-    marketSplit(p.holdings, p.base_currency);
+    concentration(p.holdings, p.base_currency);
     rows(p.holdings);
     renderNews(DATA.news, p.holdings);
   }
 
   // In NATIVE view the total has no single currency, so show every display
-  // currency (dual INR + USD); otherwise show just the selected one.
+  // currency; otherwise show just the selected one.
   function heroCurrencies() { return VIEW === "NATIVE" ? displaysOf() : [VIEW]; }
 
   function renderHero(p) {
@@ -326,19 +328,21 @@
     return h;
   }
 
-  /* ---- Allocation by market (mini-bar) ----------------------------- */
-  function marketSplit(holdings, baseCcy) {
-    let inV = 0, usV = 0;
-    holdings.forEach((r) => {
-      const v = r.figures[baseCcy].value;
-      r.market === "IN" ? (inV += v) : (usV += v);
-    });
-    const tot = inV + usV || 1;
-    const inPct = (inV / tot) * 100;
-    $("market-split").innerHTML =
-      `<span class="key"><span class="swatch" style="background:var(--accent)"></span>IN ${inPct.toFixed(0)}%</span>` +
-      `<span class="bar"><span class="seg-in" style="width:${inPct}%"></span><span class="seg-us" style="width:${100 - inPct}%"></span></span>` +
-      `<span class="key"><span class="swatch" style="background:var(--accent-2)"></span>US ${(100 - inPct).toFixed(0)}%</span>`;
+  /* ---- Concentration (mini-bar) ------------------------------------ */
+  // One market, one currency - so the allocation signal worth showing is how
+  // much of the book sits in the largest position versus everything else.
+  function concentration(holdings, baseCcy) {
+    const sorted = holdings
+      .map((r) => ({ sym: r.symbol, v: r.figures[baseCcy].value }))
+      .sort((a, b) => b.v - a.v);
+    const tot = sorted.reduce((s, x) => s + x.v, 0) || 1;
+    const top = sorted[0];
+    if (!top) { $("concentration").innerHTML = ""; return; }
+    const topPct = (top.v / tot) * 100;
+    $("concentration").innerHTML =
+      `<span class="key"><span class="swatch" style="background:var(--accent)"></span>${escapeHtml(top.sym)} ${topPct.toFixed(0)}%</span>` +
+      `<span class="bar"><span class="seg-top" style="width:${topPct}%"></span><span class="seg-rest" style="width:${100 - topPct}%"></span></span>` +
+      `<span class="key"><span class="swatch" style="background:var(--accent-2)"></span>Other ${(100 - topPct).toFixed(0)}%</span>`;
   }
 
   /* ---- Holdings rows ----------------------------------------------- */
@@ -365,7 +369,7 @@
       // Avg cost / Last / Value / P&L all follow the selected view currency (f.ccy).
       tr.innerHTML =
         `<td class="l">
-           <span class="sym">${escapeHtml(r.symbol)}</span><span class="mkt-tag">${r.market}</span>${stale}${pend}
+           <span class="sym">${escapeHtml(r.symbol)}</span>${stale}${pend}
            <div class="name">${escapeHtml(r.name)}</div>${staleReason}
          </td>
          <td class="r">${r.quantity}</td>
@@ -436,7 +440,7 @@
     const row = (DATA.p.holdings || []).find((r) => r.symbol === sym);
     const cfg = stagedFor(sym) || row;          // working copy = config + staged txns
     if (!cfg) return;
-    const ccy = row ? row.currency : (cfg.market === "IN" ? "INR" : "USD");
+    const ccy = row ? row.currency : "INR";
     const last = row ? row.last : null;          // native current price (if known)
 
     const lots = lotsOf(cfg).slice().sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
@@ -640,12 +644,11 @@
       const action = (get("action") || "buy").toLowerCase();
       if (!(qty > 0)) { errors.push(`Row ${r + 1} (${sym}): quantity "${qs}" is not a positive number - skipped.`); continue; }
       if (!(price >= 0)) { errors.push(`Row ${r + 1} (${sym}): price "${ps}" is not a number - skipped.`); continue; }
-      if (market && market !== "IN" && market !== "US") errors.push(`Row ${r + 1} (${sym}): market "${market}" should be IN or US.`);
+      if (market && market !== "IN") errors.push(`Row ${r + 1} (${sym}): market "${market}" should be IN.`);
       if (action !== "buy" && action !== "sell") errors.push(`Row ${r + 1} (${sym}): action "${action}" should be buy or sell.`);
-      if (!bySym[sym]) { bySym[sym] = { symbol: sym, name: sym, market: market || "US", lots: [] }; order.push(sym); }
+      if (!bySym[sym]) { bySym[sym] = { symbol: sym, name: sym, market: "IN", lots: [] }; order.push(sym); }
       const h = bySym[sym];
       if (get("name")) h.name = get("name");
-      if (market === "IN" || market === "US") h.market = market;
       h.lots.push({ date: get("date") || null, action: action === "sell" ? "sell" : "buy", quantity: Math.abs(qty), price });
       txn++;
     }
@@ -691,7 +694,7 @@
       } else {
         errBox.innerHTML = nH ? '<span class="ok">All rows valid.</span>' : "";
       }
-      $("imp-preview").textContent = res.holdings.map((h) => `${h.symbol} (${h.market}) - ${h.lots.length} lot(s)`).join("\n");
+      $("imp-preview").textContent = res.holdings.map((h) => `${h.symbol} - ${h.lots.length} lot(s)`).join("\n");
       $("imp-cmd").textContent =
         "# save this over config/holdings.csv, then:\n" +
         "python scripts/fetch.py && bash scripts/build_site.sh";
@@ -727,16 +730,11 @@
       return h ? nativePosition(lotsOf(h), null).qty : 0;
     };
 
-    const priceLabel = () => {
-      $("f-price-label").textContent = "Price per share (" + ($("f-market").value === "IN" ? "INR" : "USD") + ")";
-    };
-
     function resetForm() {
       $("txn-form").hidden = false; $("txn-result").hidden = true;
       $("txn-form").reset();
-      $("f-name").disabled = false; $("f-market").disabled = false;
+      $("f-name").disabled = false;
       $("txn-hint").textContent = ""; $("txn-hint").classList.remove("warn");
-      priceLabel();
     }
     const open = () => { resetForm(); modal.hidden = false; $("f-symbol").focus(); };
     const close = () => { modal.hidden = true; };
@@ -747,21 +745,17 @@
     $("txn-done").addEventListener("click", close);
     modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
-    $("f-market").addEventListener("change", priceLabel);
 
     $("f-symbol").addEventListener("input", () => {
       const h = findCfg($("f-symbol").value.trim());
       const hint = $("txn-hint"); hint.classList.remove("warn");
       if (h) {
         $("f-name").value = h.name || ""; $("f-name").disabled = true;
-        $("f-market").value = h.market; $("f-market").disabled = true;
-        priceLabel();
-        const ccy = h.market === "IN" ? "INR" : "USD";
         const pos = nativePosition(lotsOf(h), null);
         const pend = pendingSymbols.has((h.symbol || "").toUpperCase()) ? " (incl. staged)" : "";
-        hint.textContent = `Existing: ${+pos.qty.toFixed(4)} sh @ avg ${moneyPrecise(pos.avg, ccy)}${pend}.`;
+        hint.textContent = `Existing: ${+pos.qty.toFixed(4)} sh @ avg ${moneyPrecise(pos.avg, "INR")}${pend}.`;
       } else {
-        $("f-name").disabled = false; $("f-market").disabled = false;
+        $("f-name").disabled = false;
         hint.textContent = $("f-symbol").value.trim() ? "New holding." : "";
       }
     });
@@ -787,12 +781,11 @@
       const qty = parseFloat($("f-qty").value);
       const price = parseFloat($("f-price").value);
       if (!sym || !date || !(qty > 0) || !(price >= 0)) return;
-      const market = $("f-market").value;
       const name = $("f-name").value.trim() || sym;
 
       // Accumulate into the session working copy so multiple staged transactions
       // compound and Export/the popup/badges all reflect them.
-      stageLot(sym, name, market, { date, action, quantity: qty, price });
+      stageLot(sym, name, "IN", { date, action, quantity: qty, price });
       refreshDatalist();
       renderView();   // repaint rows so the affected holding shows a "pending" flag
 
@@ -807,7 +800,7 @@
       $("txn-json").textContent = csv;
       markPending(`${m.action} ${m.qty} ${m.sym}`);
       $("txn-cmd").textContent =
-        "python scripts/fetch.py         # recompute (purchase-date FX, avg cost, realized P&L)\n" +
+        "python scripts/fetch.py         # recompute (avg cost, realized P&L)\n" +
         "bash scripts/build_site.sh      # rebuild the site\n" +
         `git commit -am "txn: ${m.action} ${m.qty} ${m.sym}" && git push   # CI redeploys`;
       $("txn-download").onclick = () => downloadFile("holdings.csv", csv);
@@ -960,18 +953,19 @@
     const p = DATA.p, news = DATA.news || { market: [], by_symbol: {} }, base = p.base_currency;
     const displays = p.display_currencies || [base];
     const T = p.totals[base], gain = T.pnl >= 0;
-    const usdT = p.totals.USD;   // secondary currency, if any US holdings
     const ed = new Date(p.generated_at);
     const edStr = isNaN(ed) ? "" : ed.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
     const holdings = p.holdings.slice();
     const byNat = holdings.slice().sort((a, b) => b.figures.NATIVE.pnl_pct - a.figures.NATIVE.pnl_pct);
     const topG = byNat[0], topL = byNat[byNat.length - 1];
-    let inV = 0, usV = 0;
-    holdings.forEach((r) => { r.market === "IN" ? (inV += r.figures[base].value) : (usV += r.figures[base].value); });
-    const inPct = Math.round((inV / (inV + usV || 1)) * 100);
+    const byVal = holdings.slice().sort((a, b) => b.figures[base].value - a.figures[base].value);
+    const totV = byVal.reduce((s, r) => s + r.figures[base].value, 0) || 1;
+    const share = (rs) => Math.round((rs.reduce((s, r) => s + r.figures[base].value, 0) / totV) * 100);
+    const topPct = byVal.length ? share(byVal.slice(0, 1)) : 0;
+    const top3Pct = share(byVal.slice(0, 3));
     const M = (v, c) => `<span class="num">${money(v, c || base)}</span>`;   // clean ₹ glyph
 
-    // "By the Numbers" - every metric across each display currency (INR + USD).
+    // "By the Numbers" - every metric across each display currency.
     const metrics = [["Total Value", "value", null, true], ["Total P&L", "pnl", "pnl_pct"],
       ["Today", "day", "day_pct"], ["Invested", "cost", null]];
     if (Math.abs((p.totals[base].realized) || 0) >= 0.005) metrics.push(["Realized", "realized", null]);
@@ -998,7 +992,7 @@
         `<li><a href="${encodeURI(it.url || "#")}" target="_blank" rel="noopener">${escapeHtml(it.title)}</a><span class="src">${escapeHtml(it.source || "")}</span></li>`).join("")
         || '<li class="muted">No recent company news.</li>';
       return `<article class="brief${r.stale ? " stale" : ""}">
-        <div class="brief-h"><span class="bk">${escapeHtml(r.symbol)}</span><span class="mk">${r.market}</span>
+        <div class="brief-h"><span class="bk">${escapeHtml(r.symbol)}</span>
           <span class="brief-day num ${dayCls}">${pct(nat.day_pct)}</span></div>
         <div class="brief-nm">${escapeHtml(r.name)}${r.stale ? " (price stale)" : ""}</div>
         <div class="brief-stats">
@@ -1015,15 +1009,14 @@
 
     const headline = `Portfolio ${gain ? "Rallies" : "Retreats"} ${Math.abs(T.pnl_pct).toFixed(1)}%`;
     const lead =
-      `The book closed the latest end-of-day session valued at <b>${M(T.value)}</b>` +
-      `${usdT ? ` (about <b>${M(usdT.value, "USD")}</b>)` : ""}, a ` +
+      `The book closed the latest end-of-day session valued at <b>${M(T.value)}</b>, a ` +
       `${gain ? "gain" : "loss"} of <b>${M(Math.abs(T.pnl))}</b> (${pct(T.pnl_pct)}) on invested ` +
       `capital of ${M(T.cost)}. On the day it ${T.day >= 0 ? "added" : "shed"} ` +
       `${M(Math.abs(T.day))} (${pct(T.day_pct)}). ` +
       `${topG ? `<b>${escapeHtml(topG.symbol)}</b> led the gainers at ${pct(topG.figures.NATIVE.pnl_pct)}` : ""}` +
       `${topL && topL !== topG ? `, while <b>${escapeHtml(topL.symbol)}</b> trailed at ${pct(topL.figures.NATIVE.pnl_pct)}` : ""}. ` +
-      `Holdings are split ${inPct}% India and ${100 - inPct}% United States by value. ` +
-      `Figures are shown in each holding's own currency and totalled in both ${displays.join(" and ")}.`;
+      `${byVal.length ? `<b>${escapeHtml(byVal[0].symbol)}</b> is the largest position at ${topPct}% of value, with the top three at ${top3Pct}%. ` : ""}` +
+      `All figures are in ${displays.join(" and ")}.`;
 
     return `<!doctype html><html lang="en"><head><meta charset="utf-8">
       <title>The Portfolio Ledger</title><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1034,7 +1027,7 @@
         <header class="masthead">
           <div class="mh-line">Personal Edition &middot; Free &amp; Open &middot; Not Investment Advice</div>
           <h1 class="paper-name">The Portfolio Ledger</h1>
-          <div class="mh-meta"><span>${edStr}</span><span>End-of-Day Report</span><span>${displays.join(" &amp; ")} Editions</span></div>
+          <div class="mh-meta"><span>${edStr}</span><span>End-of-Day Report</span><span>${displays.join(" &amp; ")} Edition</span></div>
         </header>
         <section class="lead">
           <h2 class="headline">${headline}</h2>
@@ -1054,7 +1047,7 @@
         <section class="section">
           <h3 class="sec">Company Briefs</h3>
           <div class="briefs">${briefs}</div>
-          <div class="alloc-note">Allocation by market: India ${inPct}% and United States ${100 - inPct}% by value.</div>
+          <div class="alloc-note">Largest position ${topPct}% of value; top three ${top3Pct}%.</div>
         </section>
         <section class="section">
           <h3 class="sec">Market Wire</h3>

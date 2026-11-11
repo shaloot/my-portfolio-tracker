@@ -1,5 +1,10 @@
 # Portfolio Tracker — Build Requirements
 
+> **Superseded — this bundle is the original build spec, kept as the record of
+> what was handed over. It describes a dual-market product. The project is now
+> India-only (NSE/BSE, INR); see `docs/adr/0005-india-only-scope.md`. Where this
+> document and the current code disagree, the code and ADR 0005 win.**
+
 A spec for building a free, open, end-of-day portfolio tracker. Build the app to
 satisfy this document. A **reference implementation** ships alongside this bundle
 (`reference-implementation.zip`) — consult it to confirm decisions and data

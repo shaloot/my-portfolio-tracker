@@ -66,7 +66,7 @@ def parse_csv(text: str) -> list[dict]:
         except (KeyError, ValueError):
             continue  # skip a malformed row rather than break the whole build
         if sym not in by_symbol:
-            by_symbol[sym] = {"symbol": sym, "name": sym, "market": "US", "lots": []}
+            by_symbol[sym] = {"symbol": sym, "name": sym, "market": "IN", "lots": []}
             order.append(sym)
         h = by_symbol[sym]
         if rec.get("name"):

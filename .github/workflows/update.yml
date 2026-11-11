@@ -5,7 +5,7 @@ name: Update & deploy portfolio
 # changes (principle 6) and on a manual button press.
 on:
   schedule:
-    - cron: "30 22 * * 1-5"   # 22:30 UTC weekdays: after US close, India EOD already final
+    - cron: "30 22 * * 1-5"   # 22:30 UTC weekdays (04:00 IST) - NSE EOD long since final
   push:
     branches: [main]
     paths:
@@ -44,9 +44,7 @@ jobs:
           # Provider selection (principle 3). Defaults are keyless; override via
           # repo Settings > Variables. Only set the key if you pick twelvedata.
           PRICE_PROVIDER_IN: ${{ vars.PRICE_PROVIDER_IN || 'yfinance' }}
-          PRICE_PROVIDER_US: ${{ vars.PRICE_PROVIDER_US || 'yfinance' }}
           NEWS_PROVIDER:     ${{ vars.NEWS_PROVIDER || 'rss' }}
-          FX_PROVIDER:       ${{ vars.FX_PROVIDER || 'yfinance' }}
           TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
         run: python scripts/fetch.py
 

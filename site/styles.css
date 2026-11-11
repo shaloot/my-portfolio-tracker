@@ -11,7 +11,7 @@
   --line:      #E3E6EC;
   --line-2:    #EDEFF3;
   --accent:    #2E3A8C;            /* indigo - brand / interactive only */
-  --accent-2:  #8A93C4;            /* muted indigo tint for the US split segment */
+  --accent-2:  #8A93C4;            /* muted indigo tint for the secondary bar segment */
   --warn:      #B58A1E;            /* stale flag (amber, not red) */
   --up:        #12805C;            /* gain */
   --up-soft:   rgba(18,128,92,.13);
@@ -314,8 +314,8 @@ h3 {
   display: inline-flex; width: 120px; height: 8px; border-radius: 4px;
   overflow: hidden; background: var(--line);
 }
-.alloc .seg-in { background: var(--accent); }
-.alloc .seg-us { background: var(--accent-2); }
+.alloc .seg-top { background: var(--accent); }
+.alloc .seg-rest { background: var(--accent-2); }
 .alloc .key { display: inline-flex; align-items: center; gap: 5px; }
 .alloc .swatch { width: 8px; height: 8px; border-radius: 2px; }
 
@@ -344,11 +344,6 @@ th.l { text-align: left; }
 
 .sym { font-family: var(--disp); font-weight: 600; font-size: 14px; letter-spacing: -0.01em; }
 .name { color: var(--muted); font-size: 12px; margin-top: 1px; }
-.mkt-tag {
-  font-family: var(--mono); font-size: 9.5px; letter-spacing: .06em;
-  padding: 1px 5px; border-radius: 4px; margin-left: 7px; vertical-align: middle;
-  background: var(--line); color: var(--muted);
-}
 .spark { display: block; margin: 0 auto; }
 .wgt-bar {
   display: inline-block; height: 6px; border-radius: 3px;
