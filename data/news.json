@@ -1,92 +1,176 @@
 {
-  "generated_at": "2026-11-11T05:50:55+00:00",
+  "generated_at": "2026-11-11T05:51:41+00:00",
   "market": [
     {
-      "title": "Markets close mixed as sectors diverge (sample 1)",
-      "url": "https://example.com/market-news",
-      "source": "Mock Wire",
-      "published": "2026-07-10T09:30:00Z",
+      "title": "Taking Stock: Market fails to hold on to day#39;s gains, ends marginally higher",
+      "url": "https://www.moneycontrol.com/news/local-markets/taking-stock-market-fails-to-holdto-day39s-gains-ends-marginally-higher_17531871.html",
+      "source": "Markets",
+      "published": "Tue, 23 Apr 2024 15:46:31 +0530",
       "symbol": null
     },
     {
-      "title": "Markets close mixed as sectors diverge (sample 2)",
-      "url": "https://example.com/market-news",
-      "source": "Mock Wire",
-      "published": "2026-07-11T09:30:00Z",
+      "title": "Sensex, Nifty gain for third day in a row; easing volatility to support bull trend",
+      "url": "https://www.moneycontrol.com/news/local-markets/sensex-nifty-gain-for-third-daya-row-easing-volatility-to-support-bull-trend_17531821.html",
+      "source": "Markets",
+      "published": "Tue, 23 Apr 2024 14:51:26 +0530",
       "symbol": null
     },
     {
-      "title": "Markets close mixed as sectors diverge (sample 3)",
-      "url": "https://example.com/market-news",
-      "source": "Mock Wire",
-      "published": "2026-07-12T09:30:00Z",
+      "title": "Mid-day Mood | Cooling volatility sparks market rally, India VIX sees steepest fall in 4 years",
+      "url": "https://www.moneycontrol.com/news/local-markets/mid-day-mood-|-cooling-volatility-sparks-market-rally-india-vix-sees-steepest-fall4-years_17531481.html",
+      "source": "Markets",
+      "published": "Tue, 23 Apr 2024 12:23:21 +0530",
       "symbol": null
     },
     {
-      "title": "Markets close mixed as sectors diverge (sample 4)",
-      "url": "https://example.com/market-news",
-      "source": "Mock Wire",
-      "published": "2026-07-13T09:30:00Z",
+      "title": "Sensex, Nifty extend gains to 3rd day, Q4 results to guide stock-specific action",
+      "url": "https://www.moneycontrol.com/news/local-markets/sensex-nifty-extend-gains-to-3rd-day-q4-results-to-guide-stock-specific-action_17530901.html",
+      "source": "Markets",
+      "published": "Tue, 23 Apr 2024 09:45:50 +0530",
       "symbol": null
     },
     {
-      "title": "Markets close mixed as sectors diverge (sample 5)",
-      "url": "https://example.com/market-news",
-      "source": "Mock Wire",
-      "published": "2026-07-14T09:30:00Z",
+      "title": "India bonds slip as Treasury rout offsets oil slide",
+      "url": "https://economictimes.indiatimes.com/markets/bonds/india-bonds-slip-as-treasury-rout-offsets-oil-slide/articleshow/135727127.cms",
+      "source": "Markets",
+      "published": "Wed, 11 Nov 2026 11:09:10 +0530",
       "symbol": null
     },
     {
-      "title": "Markets close mixed as sectors diverge (sample 6)",
-      "url": "https://example.com/market-news",
-      "source": "Mock Wire",
-      "published": "2026-07-15T09:30:00Z",
+      "title": "Rupee rises 7 paise to 93.70 against US dollar in early trade",
+      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-rises-7-paise-to-93-70-against-us-dollar-in-early-trade/articleshow/135726644.cms",
+      "source": "Markets",
+      "published": "Wed, 11 Nov 2026 10:46:44 +0530",
+      "symbol": null
+    },
+    {
+      "title": "Positive Breakout: These 5 stocks rose above their 200 DMAs",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/positive-breakout-these-5-stocks-rose-above-their-200-dmas/slideshow/135725922.cms",
+      "source": "Markets",
+      "published": "Wed, 11 Nov 2026 10:04:09 +0530",
+      "symbol": null
+    },
+    {
+      "title": "Punjab National Bank among 7 stocks showing White Marubozu pattern",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/punjab-national-bank-among-7-stocks-showing-white-marubozu-pattern/slideshow/135725226.cms",
+      "source": "Markets",
+      "published": "Wed, 11 Nov 2026 09:23:27 +0530",
       "symbol": null
     }
   ],
   "by_symbol": {
     "RELIANCE": [
       {
-        "title": "Reliance Industries in focus after quarterly update (sample)",
-        "url": "https://example.com/reliance",
-        "source": "Mock Wire",
-        "published": "2026-07-10T14:00:00Z",
+        "title": "Reliance Industries Share Price - Live NSE: RELIANCE Stock Price & Chart - Upstox",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB6bHBYSldaWTEwM0pneWlBUVNlVjM0Njl2NFVCNGR3NTlneGlzM3VRa3Zha1RQWXJDRkxjUjR6V0hPTGsyN2FKTmFtak50X0pjUjNtQmhvMmRCTHJnNXdhYzI4c0lKU3hlVnB4cWRNbw?oc=5",
+        "source": "Upstox",
+        "published": "Tue, 10 Nov 2026 00:45:47 GMT",
+        "symbol": "RELIANCE"
+      },
+      {
+        "title": "Why is Reliance Industries stock surging today? By Investing.com - Investing.com India",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNWNFZmhoQ0JnTzFPbTRlS3NOcGd2N0p6clhSQ25OejZxbUhPVDg4WHVGRlUzY1lpUUZDS1JKN2VDSGp1aFgwSERETFVVNEp4Uk5xVm12UVAySVRzMVR1ZGJlcEpQN1pVRlpVTXBtT0E0cHAyWF9fdURLUFRYOEhsbXVWRV9EQTEtSXlzcUl6M0FxVUlCWU9icGIwTHdvTXNEWHBVUS1WQ2lmRXc?oc=5",
+        "source": "Investing.com India",
+        "published": "Mon, 02 Nov 2026 08:00:00 GMT",
+        "symbol": "RELIANCE"
+      },
+      {
+        "title": "RIL, HDFC Bank, Axis To Max Healthcare: Jefferies Picks 12 Stocks For FPI Comeback - NDTV Profit",
+        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPR25TSU1vSEl5ZjV6MWdVWE8tODNxbkVJX25SSUJ2c01jY3lmbGNhTmtVQkQycmljVE9tMTZJdEhNeTdwNEw5c0I3X09GNVc5Q2k5c00tcXlrb3ZZeDQ1UG5NampDeGFKLVdGUzhuOWwwUVpBVFRqTTVpb1N4b2l1U29EZ1YwZDVLVGVldi1RVTM4ZmtTcmQzY3BrcUQzVjNYUVpDUWFwajJoMUs5NndVM3k1cmRPWlc0RWJibnV6ZzFLN1BTMF9Ka090dnVhbzVYbW1uLXJJMzRqUzBBenR4Nm5idjJoRXNnSkwwYmtiNWlpMzZETjh1Q1E0TWVJUy0xRWFWY9IBjAJBVV95cUxNLV9uOTdwSThaMUZfdjNvemM0WlRoZlFGOEJrV0JkRkZ6YzNLRzRnby1GWTh4TDJWdmRtcWQzdHIyMmZLb0tub1ZhU2ptcGlRMUxQLXNOZ3RmeGlLcGJtSXBuZWtkYUlISG02dk5uZG1TNFZVSE84UkdqSGRjWHp5OWNxYjlIYzNkZjY1ZWUtUUFiNk1jdmZKZUdZNGpmZm1vaXVQVm9YTVIxcW1mYllCYzhiby1sMTVTaERDR29VX052a1BJYUF0MDZZUmc3NHJIbmZKUWhpblNxR3laRXVua1F6a3R0SXNCNE1Fa1N5NVVCQ3hRbF9uMlZuRnFxbzRDc185cFk4X081azFi?oc=5",
+        "source": "NDTV Profit",
+        "published": "Wed, 11 Nov 2026 01:58:56 GMT",
         "symbol": "RELIANCE"
       }
     ],
     "INFY": [
       {
-        "title": "Infosys in focus after quarterly update (sample)",
-        "url": "https://example.com/infy",
-        "source": "Mock Wire",
-        "published": "2026-07-10T14:00:00Z",
+        "title": "Infosys Share Price - Live NSE: INFY Stock Price & Chart - Upstox",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5BbEJTdmZNbE5BN0ZRWWZpd2tZZnRCZWV0MFdhYW5nQ2NSSTgzUlI4TjVPaU5BV1FxQkpYUnFWa05Fb09uMkxlNDhUWVpvV2JLWGIxUmh3SUFKSzEwUHZpX1IyTVM?oc=5",
+        "source": "Upstox",
+        "published": "Tue, 10 Nov 2026 01:37:43 GMT",
+        "symbol": "INFY"
+      },
+      {
+        "title": "Stock Picks Today: Infosys, Nuvama Wealth, Kalyan Jewellers, IIFL Finance On Brokerage Radar - NDTV Profit",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdy1OLXBTS09adGVjVm5BN2UxTzNUWm1UU2hTcTN5ejFfSDJJb1laN01zSXAwMXRmWW1KRTc3eFpybHhENDhQY3J6c2lldHFtTVBtTVRWVDFNY1dQakJlTFBWaXJObWJCZXVBaXV2MTg1V1VsZkw3c3VjM1VBaDU1UU13ZEctOHhDSnNIU2FrREY5ekVhQlZKY0ZRb08yZGF6NlVPUHB6RDAwM3VrRjExUXE5dF9fNVZjQklsTkNkN3FUbTV2d2l6ZHdIYTPSAdQBQVVfeXFMT21maC1tVnR5QWVXRnlNT3BYTzd3bnpvQncxbzZDZ0s3SFJib18xVVJoZVVFU2ZjcXp1czJqNUJSTXhMMVV3eFdxeXItT1VzQXpTVllvRlQ0ZHFSNTlraHhmaFdKeGMzLU9TWmd5bC1mSllDWmdSbUF5enVwc3NSTUxDQjY0RDljdU1pX2sxQ21WX3NiZm9QbGtpc21QeGItN0J5WUE5YVZZRU9fdUZnN000NEhYcEtIN01peFIwWkpsdXpxb3FLYndHblducUtrX2tvYmI?oc=5",
+        "source": "NDTV Profit",
+        "published": "Wed, 11 Nov 2026 02:52:20 GMT",
+        "symbol": "INFY"
+      },
+      {
+        "title": "Stock Radar: Infosys stocks showing signs of bottoming out after falling over 30% from highs; time to buy? - The Economic Times",
+        "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNWmlSOGsyWTFUc0ZDakVkQnJFMnF2a1J3eTdjd0NTSWk1MGVLbHBfRUl2TFpxWVFvSEl6QjFjMnF1YkEwdmQzcjM3SGhtQmZJb3R1R1dENjJ6WWp2bGRNay12V0gwOWh3S0NwTFVzak1GelBtUEJuYXFXZ2ZyS2txSjc2dEgyM3Rnb29Ha0pLTFJVRmtJenpiMm9Gbzk1dGtkV2Q1REFwb1h1Snc0RS1tOUpZcXNmSW5URUlzUllyLTFyUzNRRy1GTFVubjA0Y25TcjQxaElhUDJBQTVGZG1nMHFfWkhva2N5TE5YSjhBSUtHUWl1WEc4VHVyWkdCZmFuY2t3RmFuSdIBjAJBVV95cUxNTzdfeE1xdk9mVHZKYUVRNldraW1oR0pSWi13ZE05Y3dfLWhKUUl4ejE0SzB1TVdQcmlXMV83UG1ZYm9OdFBSclp3ZkFyWWVQRUlQcTZKOHNyQlpQeWpjcmlydlQ3cVVQa0N5N0VBb1ZadWhSVWZpMnN4MVREYVgwSTFPejRfazluNElXZHo1cjRjNHdITnozTHNQNzF4ZG9wLXlHdXNWUHpQOWZaRHVoRTlzaXlJelFZUjd2eGhvYk10ZDlFTXdkUUhYT0dHQmRWWFFEY1NzZnVVZ21QYzlIN0FjejJZRXhEbnpVYVJMR2xtUTZmakxsd0I4NWtSZFRCck5GN1dJRVpPRENP?oc=5",
+        "source": "The Economic Times",
+        "published": "Sun, 08 Nov 2026 23:30:00 GMT",
         "symbol": "INFY"
       }
     ],
     "HDFCBANK": [
       {
-        "title": "HDFC Bank in focus after quarterly update (sample)",
-        "url": "https://example.com/hdfcbank",
-        "source": "Mock Wire",
-        "published": "2026-07-10T14:00:00Z",
+        "title": "HDFC Bank shares hit three-month high, up 21% from 52-week low; what should investors do? - Business Today",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPcEtMLXROdHpwamphVi0zYW1McVZ2UEZNc0tkS1ZxWXktUEFyaW1zOXE5UjdWa2FTVTZ5eWx4ZFNKNzJjdktTek9yYUZ0NGlicVV0aF9PZXhPTUxLY0hDU1VtVHhOWEg2QmhBUjZuUC1HaGlxbEh0XzJBbmtVcEdteVJ2Vmw2SThkVEMzYVhDQmtQUnk0c1VNU2E5LUVYWFoxMGhSeEVaRkdMNDgtSk90NTR0QW82Vy12aDFwMlRQMVpkN2xKdmFFMDAyT25TdWFfRDZfRlJqZE9sRDFPODdGSDk2VG_SAeoBQVVfeXFMUG5razljcWtjYmJ4R3kydDFtSEQxQjFwMkpFcUxwbk5KZTZRZS1zcXFySG5tLXB0UmdqLVAzNUxYTG5fSkxkcTRZTTJDRDJoODI4UUhpRFdEbF9VaDNLck04WGNDendpMlAtVjJISEMxMHBLUGFNQ2YzQWNFQkd5bVoyQ3dTNWt5VXp6aWZWX0Z4VUhET1Vrd2ZUcVBZb2huT0c1aDEtNWV1eFlRQ3JmR2JXMjB4RGxFcU1HUUZ1UlRsclBMQnA4bkFRRlRISGF2LU9xMHhFb0JEU3RQTzd0YUdjQWRINWpYN3ZB?oc=5",
+        "source": "Business Today",
+        "published": "Wed, 11 Nov 2026 03:54:56 GMT",
+        "symbol": "HDFCBANK"
+      },
+      {
+        "title": "RIL, HDFC Bank, Axis To Max Healthcare: Jefferies Picks 12 Stocks For FPI Comeback - NDTV Profit",
+        "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPR25TSU1vSEl5ZjV6MWdVWE8tODNxbkVJX25SSUJ2c01jY3lmbGNhTmtVQkQycmljVE9tMTZJdEhNeTdwNEw5c0I3X09GNVc5Q2k5c00tcXlrb3ZZeDQ1UG5NampDeGFKLVdGUzhuOWwwUVpBVFRqTTVpb1N4b2l1U29EZ1YwZDVLVGVldi1RVTM4ZmtTcmQzY3BrcUQzVjNYUVpDUWFwajJoMUs5NndVM3k1cmRPWlc0RWJibnV6ZzFLN1BTMF9Ka090dnVhbzVYbW1uLXJJMzRqUzBBenR4Nm5idjJoRXNnSkwwYmtiNWlpMzZETjh1Q1E0TWVJUy0xRWFWY9IBjAJBVV95cUxNLV9uOTdwSThaMUZfdjNvemM0WlRoZlFGOEJrV0JkRkZ6YzNLRzRnby1GWTh4TDJWdmRtcWQzdHIyMmZLb0tub1ZhU2ptcGlRMUxQLXNOZ3RmeGlLcGJtSXBuZWtkYUlISG02dk5uZG1TNFZVSE84UkdqSGRjWHp5OWNxYjlIYzNkZjY1ZWUtUUFiNk1jdmZKZUdZNGpmZm1vaXVQVm9YTVIxcW1mYllCYzhiby1sMTVTaERDR29VX052a1BJYUF0MDZZUmc3NHJIbmZKUWhpblNxR3laRXVua1F6a3R0SXNCNE1Fa1N5NVVCQ3hRbF9uMlZuRnFxbzRDc185cFk4X081azFi?oc=5",
+        "source": "NDTV Profit",
+        "published": "Wed, 11 Nov 2026 01:58:56 GMT",
+        "symbol": "HDFCBANK"
+      },
+      {
+        "title": "Retail investors shed stocks, but crowd into Reliance, HDFC Bank - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZDBKUmxMN2pMTVVSSktQQ1RZaS1jRnBmSUZVZ2NGSFhaUmF3YVpBMDhGb1BVVGVVanU5T1BKbWliS1NVTkV5c0pxb3RQOWNnVjB3MWt6bm45aUxocHZzWXBKM2dybjhQU2Z0MVdWazh4RGk0UWp0eDR1c1dfcHR4d3JDMWJSMUQ3YTMtZXMxVEVaNmJzRm9LR21oRGVEZTRETVQxaTFSbzQyU0dPcFZKeHRHcG1ZY0dMaDU4?oc=5",
+        "source": "TradingView",
+        "published": "Tue, 10 Nov 2026 10:35:11 GMT",
         "symbol": "HDFCBANK"
       }
     ],
     "TCS": [
       {
-        "title": "TCS in focus after quarterly update (sample)",
-        "url": "https://example.com/tcs",
-        "source": "Mock Wire",
-        "published": "2026-07-10T14:00:00Z",
+        "title": "TCS Share Price - Upstox",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE4xa3lkaFFielNzaEh0c3oxTzdzMzV1MDk5TzFMYnoweVkwWG02cVBRTHZSUmM2Q1JpYVpsN2l2VmZwMFpwUzI5cm5WOUFHSGE1c2ZsRjRTWWl3MmlNOGdQUmdkSlZLUUxqRUctcGVsdDA?oc=5",
+        "source": "Upstox",
+        "published": "Tue, 10 Nov 2026 02:27:15 GMT",
+        "symbol": "TCS"
+      },
+      {
+        "title": "HCLTech jumps over 7%, TCS up 5%: Why are IT stocks rallying - The Times of India",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOZ3VYdUFVeGdwZXNZY2d4WFQ0ZWpKWEJ4MVlJNjk1a2lJRUVSZFQwUVZDVk1YbTZFc2tpQkdMOTA0S2JCbFJXZkpzQVlxelQzMTB0SVp0Z0xmTXBhbkF5NWpHRkRXM2RiTmxLRDBUaXV5ZElBTU84VnM2VzJSYnRpS0ZlNl94b0ZGenNLQ195ZUZmUjNUaHZDR3RuU0ZOQzQ1RnZENWQ2V0ZXODI4cjdsdG1xdnVIUGhBd19JVXpBandDTEZrU3Y3Yjh6elZGaUJTRFpENk5zWUpEQdIB3wFBVV95cUxNRFJxMWRqTGdZLXQ2YURUZUpGRkVjUkFoY0lJWWxIdHlWSDVjS2kteTBodVpQdmd2OV92RWZTQnZWelU1RFVwVjlOZ3BQMW1nY1QwS2xHYlJtdlJvRGJPbHVYenNEaTZTLS0zaDM0N3ZaUFZMQ3RobTJGczJtTE5Namp4aEpvQmFPN2dwdmg0S3dZTkZYVldKLVZ1ZVNyY2ZOWUtKTllmTXV1aEd2VVlMYmE1RmM4NjBUZU0zYm96MUNOa1dCbXlORGpwZGZ6Mm94eFRwQWdzbjNPU3ppZUJz?oc=5",
+        "source": "The Times of India",
+        "published": "Tue, 13 Oct 2026 07:00:00 GMT",
+        "symbol": "TCS"
+      },
+      {
+        "title": "Dividend stocks: Coal India, TCS, HUDCO, HCL Tech, GAIL among top 10 dividend paying stocks - Check yield, annual return - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPallqczZRNXVmRTdSdm1ZMmdVVE82ZzEyYVd1VTV1ZVBiTkFMNGxYOVE3M0Fld0s4RHZESWZuMUtWaTMxUGRnd2kxWVB4X2tBeXpyZjNrRm51OU94ZVVYZmdtb2VHWVJ4cnhRdUV3aGxzN2pPVUlVZzJCcENLbGxQUGdvR1dqY21XdWNxZFpVckZXOGtKblZJTWs3MC1PWGZ5ZmNraDJ1QTVtbmg1d2xJVTllVS1kSjdvSllHWFRBejVKWXRGU1BkVWlvSDBMMnQtVElzVzNkUWw5bW9GWXR6aktCTkU1YmdBd1pBVC1LMF9PNm5lbC1HTnQ0aTRCdw?oc=5",
+        "source": "TradingView",
+        "published": "Thu, 05 Nov 2026 19:47:25 GMT",
         "symbol": "TCS"
       }
     ],
     "MAZDOCK": [
       {
-        "title": "Mazagon Dock Shipbuilders in focus after quarterly update (sample)",
-        "url": "https://example.com/mazdock",
-        "source": "Mock Wire",
-        "published": "2026-07-10T14:00:00Z",
+        "title": "From Rs 84 To Rs 2,245: This Defence PSU Stock Delivered Multibagger 2,572% Returns In Six Years - NDTV Profit",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNUTV2R05NTDBoOHZuRUdCM3ljQjF4ZmZ1d3pHZ3ZxVFZHbXIwcEh4Q2RFVEVnek5aZnZoYzZ3LS1Za0ozYmVSQ0hSM3M1Y1R6c3NCT3V0aDZDSi11eU1TdUFhVHlISms3VkZaQ3N3V3hEd0dfY0w0dU1PM21XTHc2N2U5R2dvbHV4TkRKSy12N25mZFl4WW9PaVBHU2VlR0RnSXAyVVJuZUxtbkdrbnpSSElEQUJ1WTFXNEVtcDJJMNIBxwFBVV95cUxQUk9UbDQ1YTFCc19iRXdQdldyUlBwb1pNbWc4RFdza19ydlNiNGxYdjlJTlJxUkQ0TmJ3Y29vWkVVRktzRlYyaFBhcjBGSzR6el9Lb1duSVYxODdDY3U5ZEZ5dXpfVDlUdHNtV0ZhS1hnN19uMVFaQ0xib245bmM1cUQySzhJZGZzM29FWFQ4MEc0TXdHWHhRMTh4Z3Z0Ry04ZGF1ay1qMDVVQVF6NzRwTXZ5cS1uMG1tLWEtQnlUdkpDZVUxaFFN?oc=5",
+        "source": "NDTV Profit",
+        "published": "Mon, 21 Sep 2026 07:00:00 GMT",
+        "symbol": "MAZDOCK"
+      },
+      {
+        "title": "Mazagon Dock releases investor deck with \u20b91.82 lakh crore order book - scanx.trade",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQmhla2ozRldwSGFodFNJdzNMcFBFUTFBN2h6cDF1VlhTVHBfSTdOX19NNDQ4dnJiY1UwWDRrTmhjWlVIMkVRTjM0NXUtbUhIOGM3dFhVWDBjUkNaN1pzTEljWkY0eXFiZGJ2aTNjQjZhMEFRZkxQbVhSaXA3TjVXVjlhQWF5VUswd0JMYy1naVdRWkQycUJrRXhpckFZQ3p6SXpvN2pidWxOb3h4SmdTSQ?oc=5",
+        "source": "scanx.trade",
+        "published": "Mon, 21 Sep 2026 11:38:41 GMT",
+        "symbol": "MAZDOCK"
+      },
+      {
+        "title": "Mazagon Dock Shipbuilders shares gain 2.15% to Rs 2,569.00 - Moneycontrol.com",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPazZXSUl4Y0RqRDNPaEZSTS1TT3VTTDhQV0h5T2xicnJjalc5Q3h5TWJtWEk3RE8wX2FScFhaeFM3a2N5QlZNcmdIeS1BRUdYVEllTGxHc0wtc2FlM0JqZlNNem9fcmZ4M0N1ajhrcElCYkg3c2d1WTdZQjdKXy05N21USHFwUnN2QkxxR0N6Vlh1bTBYeHZ1Y0YwSEVHX2hfREZ1cFljb0pCdTd4YURWZWdiMF84WUNrQkhzelF2NDlod1MxS2FhU21jVmY0X1hV0gHWAUFVX3lxTE8tamdwWkdScHdROVYtWTlDOVNZWGszYnZfYVVrLW4yR1JrS1l1cjUySmFXYjZaRHhPTXl3SXNQMzlIMGxweDV6N0NxRVl0MTM3Y2xVWU9ZM3I3TVhOT0hMcUZoSExuWTZ6clJzcXhZUHJYclo4Wm5MR1BQcnVYcEpQMnNDRXlFQkxkX2JScnBEang4Y0l4Q1dfWjRRODR3NzNjenZtSG5fUXhKOGNjdnZMMDRhYjhmTEdQNVl0V0dxVHZPLXNNRUU1QVhoc0FWX19vNlkycnc?oc=5",
+        "source": "Moneycontrol.com",
+        "published": "Mon, 10 Aug 2026 07:00:00 GMT",
         "symbol": "MAZDOCK"
       }
     ]
