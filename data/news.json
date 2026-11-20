@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T03:46:24+00:00",
+  "generated_at": "2026-11-20T03:40:19+00:00",
   "market": [
     {
       "title": "Taking Stock: Market fails to hold on to day#39;s gains, ends marginally higher",
@@ -30,42 +30,64 @@
       "symbol": null
     },
     {
-      "title": "NTPC Share Price Live Updates: NTPC Faces 2.02% Decline in Weekly Returns",
-      "url": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ntpc-share-price-today-live-19-nov-2026/liveblog/135975800.cms",
+      "title": "Gold Rates Live Updates: Yellow metal heads for steepest weekly fall since March as dollar strengthens, Fed rate hike bets rise",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/live-blog/live-updates-gold-rate-today-20th-november-24k-22k-20k-18-carat-mcx-gold-silver-price-in-delhi-hyderabad-chennai-bengaluru-citywise/liveblog/136011549.cms",
       "source": "Markets",
-      "published": "Thu, 19 Nov 2026 08:10:05 +0530",
+      "published": "Fri, 20 Nov 2026 08:57:40 +0530",
       "symbol": null
     },
     {
-      "title": "Anthropic's $81 billion IPO overtakes Elon Musk's SpaceX to become the world's largest issue",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/anthropic-prices-its-ipo-at-83-per-share-valuing-the-artificial-intelligence-giant-at-1-5-trillion/articleshow/135975698.cms",
+      "title": "TVS Motor Company among 4 stocks that close above VWAP",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/tvs-motor-company-among-4-stocks-that-close-above-vwap/slideshow/136011430.cms",
       "source": "Markets",
-      "published": "Thu, 19 Nov 2026 08:02:49 +0530",
+      "published": "Fri, 20 Nov 2026 08:46:04 +0530",
       "symbol": null
     },
     {
-      "title": "Lagarde: Might consider role at WEF after ECB exit",
-      "url": "https://economictimes.indiatimes.com/markets/us-stocks/news/lagarde-might-consider-role-at-wef-after-ecb-exit/articleshow/135975538.cms",
+      "title": "Tata Technologies among 4 stocks showing RSI trending up",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/tata-technologies-among-4-stocks-showing-rsi-trending-up/slideshow/136011353.cms",
       "source": "Markets",
-      "published": "Thu, 19 Nov 2026 07:55:30 +0530",
+      "published": "Fri, 20 Nov 2026 08:40:26 +0530",
       "symbol": null
     },
     {
-      "title": "US dollar hovers near 19-month high, Aussie falls after soft jobs data",
-      "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/us-dollar-hovers-near-19-month-high-aussie-falls-after-soft-jobs-data/articleshow/135975502.cms",
+      "title": "Maruti Suzuki among 6 stocks flashing White Marubozu pattern",
+      "url": "https://economictimes.indiatimes.com/markets/stocks/news/maruti-suzuki-among-6-stocks-flashing-white-marubozu-pattern/slideshow/136011413.cms",
       "source": "Markets",
-      "published": "Thu, 19 Nov 2026 07:46:47 +0530",
+      "published": "Fri, 20 Nov 2026 08:39:49 +0530",
       "symbol": null
     }
   ],
   "by_symbol": {
-    "RELIANCE": [],
+    "RELIANCE": [
+      {
+        "title": "Reliance Industries Limited (RELIANCE.NS) stock price, news, quote and history - Yahoo Finance UK",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4xeXJjVnZ0V2gtTms3eTY0ak1yaTZnR0RXVHpEMEQ0bTh1SElpTFBkV3c1R1dIUlk5SEZVMnFzLUM3MmcwS1BPRWxLV0RHS1prbmU1U2NKbTByNm8?oc=5",
+        "source": "Yahoo Finance UK",
+        "published": "Thu, 19 Nov 2026 02:10:49 GMT",
+        "symbol": "RELIANCE"
+      },
+      {
+        "title": "Reliance Industries Share Price - Live NSE: RELIANCE Stock Price & Chart - Upstox",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB6bHBYSldaWTEwM0pneWlBUVNlVjM0Njl2NFVCNGR3NTlneGlzM3VRa3Zha1RQWXJDRkxjUjR6V0hPTGsyN2FKTmFtak50X0pjUjNtQmhvMmRCTHJnNXdhYzI4c0lKU3hlVnB4cWRNbw?oc=5",
+        "source": "Upstox",
+        "published": "Wed, 18 Nov 2026 23:35:29 GMT",
+        "symbol": "RELIANCE"
+      },
+      {
+        "title": "Reliance Shares Rally 17% in 11 Sessions: What\u2019s Behind the Rs 2.74 Lakh Crore Gain? - NiftyTrader",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNM2tJOFFoVkNtQlRjWm1SSEI0dlJYYWRIZkNqVWNaQ1REaTFVeVdESU1GTVBxV190YkhGdGdhS0RvUGhDS2xpNXlZd3JHcnRWZzI4cHphZndyLUtQTVpKbFo4MWNlTy1nc1IwVm9HVXpfbnR4N0tockU1SFJZb3d4NQ?oc=5",
+        "source": "NiftyTrader",
+        "published": "Wed, 18 Nov 2026 11:27:57 GMT",
+        "symbol": "RELIANCE"
+      }
+    ],
     "INFY": [
       {
-        "title": "Infosys share price: Lost 1/4th investor wealth in 1 year, should you still buy the IT major? Check target, stop loss - Livemint",
-        "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPYW9YNnQ2eXdVU09QS1d2NWpJQUFHMHdfTDNXOUNiNThSSy1rai1YLTEwNUNpMzBNQkhncUNVS1lQUVJ1N1dORnpubTA5S1QtRWJPbFk2MjJJampXMFdSQmZzTUZyelhuOG5DaW1NWVdNN1hEd3kweENoZi1adVduc0NOZzVOeUFyTTBFNHNMd252ZXEtZVNBRzBvc0RBenlBTnRGR1lBcHNyLWEzN0Eta1ZUalZZRjFTem9RNmpDdVRoVDVRSDBZeDVWeVVmeUhHeE1qOUpmT0cwTnRSSzN0aUoyMjJUWlZCWS1DNF9JN2NvMmE3Y19GenlkM2Q4UlAzT0xPQ0tXZnNUcUR1by1YZ9IBlgJBVV95cUxOUVE3RTh3N0h2UU9YNG8ybnp6QVRTRlFWZk5jUWlBNTFmci12cVZvSmI0UlhOeThmaDR5VVJjT3pFN2JGSWdESEVZZGF2SW9wY2poZjhScFIzLXBuYzluSDVCcjhsTEMtREVxbktTYmtEZFlXYlNXVVE1VzRxbjJMNUdjZWJodmlITkhoWlp5YTBTaTlERDVKc0NQM19Cb0JrV0V5Tk51Ri1sWXhjNlUwWV9GWDJWVmNwbXYwankwYjd2MkEyOHU2RGZ0cGhqWk1VLWRwVFp2TGQ3SnlIXzhKakxnbW92U1NYa0ZqUDllcjVUUEZGYXhCSXdsY3o0U0xMWHd5Qy1iOUVKZ01feWVlUmFreWVoUQ?oc=5",
-        "source": "Livemint",
-        "published": "Wed, 18 Nov 2026 09:41:06 GMT",
+        "title": "Infosys shares slides 2.5% despite Japan JV buzz; stock near 1 month low - BusinessLine",
+        "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPMmctTnFENGlwOGdmQmZycV8yU2R2UDVwSkNWT2xaN1l6Wi1zWmNXRkxrOTVHTWRzREd6OWJybl9mVjlKUE5GWUROWmYyd1FtY3ZuX0hYbXkyX19admtmMm1TZGVia3p5X29vM1NxX3lKMzBWM1duVUJYbUQxY0RzTFpfU2NvZmVKSGkweVVmN3ZjQXo3Si1JbFNLaVQ5ZGdTR3pQUi1rU2ptRGMwMkphejE2bE9tRGoyRGdUWkpWekIzWE91X3pvZXZTc2lTQmxlNV9DeUUtOFV0ZEhGSnpyeVBGdU9leFHSAe4BQVVfeXFMUGFXR09SYmZ6NjMxMGpBakFBbDkyQUdRdUFUS2ZVaVl4a28yU1VvS016SUFJVnRfS0RjdWtFY3c3VEpITXI2bUZlcGR3bHBlQTlwRHVpdHhSTkx5Z3h3WkRISXJoSHFQblNlWlVhS3JRN3RhV3JNb29UU01RdHJCQU1PU25uZnRnQ2dzVkQ1akNzU0FfNFJtR3FrODZQR1lQRVRuRllSaHhDMXU3bXhnanVSY1pZSUxyNmVtOFlZR1ZDR3ZrMzc3b1ZPeGNfRHl5QWdrT2owX0ZfR2Q4VThyQ3lXTFZabUlGUVlGVzZWUQ?oc=5",
+        "source": "BusinessLine",
+        "published": "Thu, 19 Nov 2026 07:27:05 GMT",
         "symbol": "INFY"
       },
       {
@@ -76,10 +98,10 @@
         "symbol": "INFY"
       },
       {
-        "title": "Stocks to Watch Today: BLS Polymers, NALCO, LT Foods, Dalmia Bharat, Sky Gold and Diamonds, Greenlam,... - Moneycontrol.com",
-        "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxQbUtzdkZ1UV94eVR4RnVpOWNRNmt4bWc4REx4blFCSy1haFRnbUdvbHctY0x6bkIzZk9ndnVKeUc2VTVka2g0WEhRVTh3WTdOUkdGaERrN1J1VlpvR0duVGEtRUJYLURhS0hHRGJNSk11NktCdkRVUE9VZ1pmTTN3RzVGM3AyZEZBTHNkdk5HWlNDU3ZfZ0pJSWUxUU1NRDVvNjhfZ19INk1USWs3NnF5RHFSeUZUajR4Q2RjQUVsRjc2R1ZQajV4anJROWE2SXUtQTVEYW5FZ0hVUVBINEhDVVZqZ19lNmJkY05ESUFzUmVwdVFtLUNEVkE4XzRsYW9CTmluUWdpWXBnOHF6cS1wNEdWYWo4dXBRNkU2R2dMTnB4THhFektPTU1UdzBPLWRpUDlIeGZELVdlR3pG0gHCAkFVX3lxTE5QbFhrYVIwdGRFazFocWI2NUtkV01fSWlyQ1gzNkdhQWdFSEdqZElBWWtmV2ViM0NLcGlJSktqZ3B1UVdkSDZqdUFPQ0F4c3hOZE14UHlIaG0zYjJYdVBJNUJ1SmxIanBoSVNxMDlnbmtpMmNlUTJWZV92V0pjbTRoSEl4bmRFT0FGUjRSRE5OdS1URXd5dE1ITTZhM1h2WWltQkNOMHE2dWVyeUluUTZXRWdqSlJ2eW9WaF92VHkxVDRnVkkzYlB5WUQ2Z2tfbEZHLVhidnkwSzNEbVg0N2F3clhIbEhMYWpFYjRaWnBKZ2x3RDlrM05KQ3dFVlhkRVJZVG9zWHBnSlRIT2xIOTZ5N0hzejU1NFAtYkwzUVp5N1M0OVlsR05HaC14UmhiWjM0Q2dpcXp6OUJ0RWZHamdSNWc?oc=5",
-        "source": "Moneycontrol.com",
-        "published": "Thu, 19 Nov 2026 01:49:51 GMT",
+        "title": "Infosys (INFY) Share Price Today (NSE), Market News - TechGraph",
+        "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5yUlA0Sy1KSjF0S0cyNEE4ZkNwQmFxWGpXV1V4YVhqTlRkNHp4dUQ5cmZjMTdZSXA3cHNyR1p5QVp1TF93VDRFbmc1eXNiU2lDQWFEVE5xclVtSzhu?oc=5",
+        "source": "TechGraph",
+        "published": "Tue, 17 Nov 2026 08:00:00 GMT",
         "symbol": "INFY"
       }
     ],
@@ -88,25 +110,32 @@
         "title": "HDFC Bank Limited (HDB) Stock Price, News, Quote & History - Yahoo! Finance Canada",
         "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5OR1M3THRtTERvWDhiSGhfemR6Q0xDSUQwMVFpZlNFMWh6LU1FV1RnZGlONW82UTFHVkw3bGtfVkZDRWMtSHVtYzB3QmdXSzJI?oc=5",
         "source": "Yahoo! Finance Canada",
-        "published": "Mon, 16 Nov 2026 21:18:49 GMT",
+        "published": "Tue, 17 Nov 2026 21:01:20 GMT",
         "symbol": "HDFCBANK"
       },
       {
-        "title": "HDFC Bank slips; stock options granted at Tuesday\u2019s close price - BusinessLine",
-        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOY2F2MzVFMllPWWpaTWRHSDE0Q3duZVdyN2NrbE9hNGVnSVUzYVZyS0tfaHR5NUZydlBqME9PVG1mdHhGTFF0d25MNC03WUQwNEVYbTBOdVR6ZlpXcTl2ellUZzlMSnIySU1WN1ZOMlpNSUVFY1EwWUc5bTJJV3dLQ2VTQVpodklvVVB3a0U0UWhJOXNyU2pnMTBicFA1anRyd1BZUlVNbExjUFRQMHRHMWtPMnY1QkZkYjIxT2NLamRrZW1IMEh6d21lb3ZmczhqX3dlVkEzONIB3gFBVV95cUxOeEVnMXhOQUxqaWdPd1EzYXVJckVQWWd1TEpXdHI4Sk5xZ0RjakktbnV2R1JnYzdsdkFfelhMRXRySEJVWDJ5THU3RXhmcGVVSW1SS3Fob2tZcUxxTU00X0VxV1ozdVRHY216T2RoeEFBeDF6RENrUjdZUEFpaGlUVXhUeXExdklaSXUtVWFnVXdaNTRhNFBobnpwWmNZVXFoOEQ1TmJQb2NJTnMtRDBkY2h0WFVjQ3ZSUU9UVUZlQktVb05GMWlHeVJ5YmxrOUJqXzY1dHVFak5JdFZBQ0E?oc=5",
+        "title": "HDFC Bank shares edge higher, but heavy selling keeps pressure on stock - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNWEJGZURDNnNwYmV5NTFtUU51QWJ0U0xDWjN2eGl5Z3RvYTNDYTY1T09VcDN5UHgyVVZMckhiWURtVmg2ampncW02N0tvYk1xQ1RlNS0xTlRFVWhtOGFNbERzeG9GZzNIc0JZd015SWs0MEtualNvT2ZTWlRqTUkwY3VSN25KWExfN1VvVUtNU1R2X2Z4QW9qU29sU2otTTE4ZXZDOC00V18zNU5sYXhIVVdLQkdZUTV1V0paN21YemIxN05HaWc?oc=5",
+        "source": "TradingView",
+        "published": "Thu, 19 Nov 2026 07:08:00 GMT",
+        "symbol": "HDFCBANK"
+      },
+      {
+        "title": "HDFC Bank shares edge higher amid heavy selling keeps pressure - BusinessLine",
+        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxON0VRRmhidGlpMkk3QV95bElTYXFkQXNfdHpFZXBsa2NfbzRqSThhVEF6TzI0Q1FHNjZEbUFfRG9kTzlwUVRlbjBMcnZidGdRUlJZRE13cS1odEtzYzhReW9iZEdTMzJhS2FEQmtsM2huZkNrNlZZb3J4NER3V3VvMElpQjZ1ei1xOGdNV1ZMSlJTMGgwWXZsLWhtN19JV2ttWDh3UDBmTklMWnlMWFhOS1p4VVNkaFNyY05RaU1aeFVHTUlOdVZiRFF4VXF0TEh0YUxrTDdBVFhmTnVQSDh2QjZ4Y9IB6gFBVV95cUxOWGxYLVJvaXJ6aE9HUkd2QzhTemlUXzUxcndubXphNGNxbXZHR21iZHFWek1nZFdka0JPY1FuVVJBNXRIUldpRjB5MGltRlVBa0JTMmtRN0xPZzd2Qkl4ZEVOT1piem8tQlREZUl2el9mamFIR0dsdm1BUEdEcXZtQ2tLbkJ4LTlHUlVCSWIxNDZGX0lONHBnMy1mczVocC1JZmlWcHRPRnRoVkZtU1FxV2Rpak1NYUFmcnRpWWNobEw2UXFKTDZkVllDNnQyYXhjS1doUnRDc29uWVpvWnVweXAtblFPZlJRM0E?oc=5",
         "source": "BusinessLine",
-        "published": "Wed, 18 Nov 2026 07:22:17 GMT",
-        "symbol": "HDFCBANK"
-      },
-      {
-        "title": "HDFC Bank Share Price Rises 2.46% to \u20b9817.75, Hits 3-Month High: 5 Factors Driving the Rally - India Infoline",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPbjI2UGZOWG9mUF8wa0dPWV9oTnZkZEZWTEtaNFVLcHAzLVJZZjJIcGxsTW8zMXN4VWlNdGN6elExNUlpc1hPTENOakk2N1VIbWFUUnkyT1NXcWNWTjU2WmxiOGo0a0RqRGpHbU9pTEp4cmlONU5IdHE3QU1XeTE5ckIwY19xQmQ3cTVlYnRIb0hYVXJQMXlheVhzcGlxaHJwSXBkLXFIV2h6S3Z1ODZtamp2M0lweUI0V1NXNVZzdXItWkFnV0hZVXVfek9EZw?oc=5",
-        "source": "India Infoline",
-        "published": "Wed, 11 Nov 2026 06:19:25 GMT",
+        "published": "Thu, 19 Nov 2026 06:56:38 GMT",
         "symbol": "HDFCBANK"
       }
     ],
     "TCS": [
+      {
+        "title": "Tata Consultancy Services Limited (TCS.NS) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1BSy16NndZSGpmME05RXVyV2lZLTVNYjAwZUpqWkFkemk3bWdJUGM1STlteGM0Z2tfc2pzMjR5SGR3eVRZRm5XNzhoNUdyWWxYSHhnVw?oc=5",
+        "source": "Yahoo! Finance Canada",
+        "published": "Thu, 19 Nov 2026 14:20:49 GMT",
+        "symbol": "TCS"
+      },
       {
         "title": "TCS, Infosys stock ratings: CLSA cautious, flags growth, margin concerns; check target prices, downside... - Moneycontrol.com",
         "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxPQlFDZ0FYcUpBQmpFdE1Ec2xhY2lTMGJKd1lsZ1Z3MjBJN0IwVm9zMW9lSjdOcTZNb3FNOEM2OGg5OEpJM1ZyUjczdnFPcFA1U2h3STNMcFZ2VS1YVVZzejhsSjV5QnBQeGlRaDlBeGdWWUprMVUwV1hTS0J3YWtrM0ZnVFM0VVdwbklnUmFFdVdvTjI0dEo2Zy1Ob29PdE5JUEc2THZJeFdUVlFETGFybExQWUNuNTFFV253OTJ5SkFrYXdzU1NtaEhMUzd4VG9oUE9iSVNJRXdIcHZrNFlhQy1KOWc2N2tHUGhzS05RbkVCbFpkYktnVmpla9IBgAJBVV95cUxNbm05Z2NHTlpGYklpcFU1aWNCbEU1aVZtLWhxZXRlSU90am8yWlFxeGxNSXRoYi1kMmRFbXJCUlFzejltUE5tOVFXZHBvVWIyQjFBbTU1akl3NHdONFNjRkpITm9XdlAzYWYwaDN3VFRUM1hmdHA0Xzk2dFlfdzhMa3V1cHlSd0JLeVRyb1dfYVIzaTJLRzZPYjE1ZkNBeC1FN0pFc3NleTZYNTJfTGc5al9ZMVVOQktRR01QbXdtVmxzZVJpN3pqNy0wdUR4Z1QwWVVneG83T0xaSC10MjlOTnMzc3ZXTzlsR19WWnBPd1RvNUNHQjB3dlhvYXB2Nmhr?oc=5",
@@ -115,33 +144,19 @@
         "symbol": "TCS"
       },
       {
-        "title": "TCS share price down 26% in 2026: Is this a buying opportunity? What do technical charts suggest? Key levels to watch - Livemint",
-        "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPTHZ4azhjS1lkdUNUMDBGM2MxT2tqUHRxbENxQ2lFY3VWREJUdDlmanVyWUJxSjUxamlvek5hY3hNaEZSMWlEc3RxVjRVZ25adzVzcFhucXI2SGNoT1Z4SzNOcjJoMVgyTEE5UXZyVHVmams2MkExYkRDR29MWkVfSjBVOHV0YVNRdnh1dGo1N2RKWXpacm55Wkw1QnNoUjdyVkpMNDh0ZUxtd2p2ZTdGV0t0OWxRTzVuR196T2RCOGdzSnBnZkVZNjB6Z2pFYnFoeDNOWk5WVXpuVGNUNHBuLTZVamc5ZzVyejh4cE9HYzkxUzRrcnUtbHIyWEtPRkZ4TFVxNF9EQUtZTEM0VTZrQtIBlgJBVV95cUxNTDJJRVlENEFZX0VXcEprTGY1dV9pcG5GR3Ixc1hhMDhIUFFnT2xSVUFCRE13aFNLVFVtclpaQjJva3NwY3JzRzBKWG90cGNkelM4UE5Qel9Ld2RHckxfNHZFcTRBSmlGM0FQbms4RXRxSzN4NEY2bmNqeG9NNXpVYW5xcU5BUFBoUmpxN3JZaGVtcTR6Qkd1Rk1YckU4cWRrdlQ5OFhvNVFXZ0hmSE94cE5oUFlVaU5DQV94Rjd0V1JQU1N0S0lreWFrUTllY080MEZtamY1MTNvWEJfZ3ZwWHpTWWFhcGlaWWc0OHJDMVVxMGNYMTByOG04WG0xdHppRmNydm1HVVcyRFdoNWRiemdhcnlNQQ?oc=5",
-        "source": "Livemint",
-        "published": "Wed, 18 Nov 2026 04:45:21 GMT",
-        "symbol": "TCS"
-      },
-      {
-        "title": "Tata Consultancy Services Limited (TCS.NS) stock price, news, quote and history - Yahoo Finance Singapore",
-        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4yZG1MMUJWTjQzeUxZdV9QMF90azdyZlhNOTctMFZTMTYyRVhVWlZKbDFRenlSZXN2aEpLWTRkVHlROVpBNmpZYWZ5V3EwZ2FQU2loLQ?oc=5",
-        "source": "Yahoo Finance Singapore",
-        "published": "Tue, 17 Nov 2026 01:05:40 GMT",
+        "title": "Nvidia Q3 Revenue Jumps 103%: Why Did TCS and Infosys Fall? - NiftyTrader",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNNTEtdFlabjUxSlY3WFVhSjFVS0tPUXdXQlhteUFaWmtJWW5GdVViNFZiMU9KaXNVYzRpU0c2bXFoU3NPOHYxVFF5MVFxbXFVR0dQZjE2dkg1ZXNsUjE3eHg0cS1HRnBmR3V2ODFqMkhmU19XVkhDTGlybGJhbVFtbm1R?oc=5",
+        "source": "NiftyTrader",
+        "published": "Wed, 18 Nov 2026 08:13:18 GMT",
         "symbol": "TCS"
       }
     ],
     "MAZDOCK": [
       {
-        "title": "Mazagon Dock Share Price - Live NSE: MAZDOCK Stock Price & Chart - Upstox",
-        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5YVHh6RW1JMXRfMlFjblF1enhUUDBKdFFHUUs4VHowc09vaW5MNF9xTWVXd0x1eWkwQlVQcllCU2Z5VTU5NVAtbGxRelFhUHFhZENQNzJYTUFyck5LY1ZJQ3BXU3VxblB6aldHcWRVRTIzZw?oc=5",
-        "source": "Upstox",
-        "published": "Tue, 17 Nov 2026 21:47:40 GMT",
-        "symbol": "MAZDOCK"
-      },
-      {
-        "title": "Mazagon Dock Shipbuilders Limited Stock Price Prediction: Today, Tomorrow, Next Week (MAZDOCK/INR) - Traders Union",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB3QkRRRV9xRTBYUXo0Q0p4d2ttdXlManZkMlZUTlNFM0tqTUlUSFk4alhhbDgycG5STHdnekpsNC1iZjJKTkVzbHF4V1ZLdXdxM0pCdHFyTFJkYnNXY0dtM2ZmNnZvcTdZUEczcF9xMzVvYVJINjRERGR3M21VQ2s?oc=5",
-        "source": "Traders Union",
-        "published": "Thu, 15 Oct 2026 18:10:05 GMT",
+        "title": "Mazagon Dock releases investor deck with \u20b91.82 lakh crore order book - scanx.trade",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQmhla2ozRldwSGFodFNJdzNMcFBFUTFBN2h6cDF1VlhTVHBfSTdOX19NNDQ4dnJiY1UwWDRrTmhjWlVIMkVRTjM0NXUtbUhIOGM3dFhVWDBjUkNaN1pzTEljWkY0eXFiZGJ2aTNjQjZhMEFRZkxQbVhSaXA3TjVXVjlhQWF5VUswd0JMYy1naVdRWkQycUJrRXhpckFZQ3p6SXpvN2pidWxOb3h4SmdTSQ?oc=5",
+        "source": "scanx.trade",
+        "published": "Mon, 21 Sep 2026 07:00:00 GMT",
         "symbol": "MAZDOCK"
       },
       {
@@ -149,6 +164,13 @@
         "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaTVDMWlSbUJmS2RqNk5nd3lOdDBFVnV5SnU5bklHSXRKTFg0cnJlcUJhTkJCdTdFR19Gb1pZM19QOVU0NXp1Y3dKMTRfSjlaNU9KamJPRjhwZG5OeFlET3o1LW9LZ3BubUFjejdVNjNMNWQ5a2VwcWtkQlNoUFQxeWV3WWhSYVplUG1fc1M3YjVnc2h5QXJwTGR2NXp5NV9EYTBSZG5vQXVWUE5lN3FWeVVEelBvc1RMQU01cnp4YUxZZ0xyY2cwaVo4bWRlSHPSAdQBQVVfeXFMUF92cTlVbXZqRmpDa2E1S3dJZ2V1OW9GN01WV2xyc3F5MUZKX1dLTjN0WHRiUGZXaE95b204TW9kWFM3U0kyMHRBamRBeXRJMjlVZ00xMk5NNmljaTlQckVDN0txZnluY19BZmZTN3dRTjBHSmtzZ2x0R2ktLWN4cUJ3OEtLN1F6blpZZ3hZUWl0MjNCbTZjcnlYZmEyS2xOc0dWOUNnbk1Mdk1EbFJaVHpjUGJZMldJQmZsVDlwMDRxSTBiNllEQ1Y5dnUtNXNhMktwOFI?oc=5",
         "source": "CNBC TV18",
         "published": "Wed, 28 Oct 2026 07:00:00 GMT",
+        "symbol": "MAZDOCK"
+      },
+      {
+        "title": "What Are Spark Plug, Contract Drug and Navy Ship Stocks? - Univest",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNaFlOWU9EZWdXTVNPdVNhTnJISHdjUWEyMDhsTmp5THdpUlEwSFFKcmNtcDc4MWM5MFAxd0R5OTQxMExZQzdMTlBGanhjdS05RjEtNFZSSVh2eG45VEtHaXFPdktrMFZMMGEtTjhJY19jUTU3R2JXYUJxSER0UnVleWVzU09rNUZSODNPUlUtelZ5M3Z6T1haYVo3Wlk0YlVfU2lXNk82Sk55VDFIa0V3aDdDZy1NT2hqSG9JNmI0VmlYVGFablI0TktPLWdVQQ?oc=5",
+        "source": "Univest",
+        "published": "Thu, 19 Nov 2026 10:38:00 GMT",
         "symbol": "MAZDOCK"
       }
     ]
